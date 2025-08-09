@@ -1,0 +1,37 @@
+
+body {
+    background-color: black;
+    color: white;
+    font-family: Arial, sans-serif;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+}
+
+/* Banner box */
+.banner {
+    display: inline-block;
+    padding: 20px 40px;
+    border: 3px solid white; /* white border */
+    margin-top: 100px;
+    font-size: 1.5rem;
+}
+
+/* Navigation links container */
+.nav-links {
+    margin-top: 40px;
+    font-size: 1.2rem;
+}
+
+/* Link styles */
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    margin: 0 15px;
+    border-bottom: 1px solid transparent;
+    transition: border-bottom 0.3s ease;
+}
+
+.nav-links a:hover {
+    border-bottom: 1px solid white;
+}
