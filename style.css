@@ -28,12 +28,13 @@ body {
 .nav-links a {
     color: black;
     text-decoration: none;
-    background-color: transparent;
+    background-color: white;
+    padding: 4em;
+    border-radius:4px;
 }
 
 .nav-links a:hover, a:focus {
     background-color: white;
     outline: none;
-    padding: 0.2em 0.4em;
     border-radius: 4px;
 }
