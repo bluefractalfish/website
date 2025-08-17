@@ -2,10 +2,22 @@
 body {
     background-color: black;
     color: white;
-    font-family: Monospace;
-    text-align: center;
+    font-family: 'Agave Nerd Font';
+    text-align: right;
     margin: 0;
     padding: 0;
+    min-height: 100vh;
+}
+
+.logo {
+  position: fixed;
+  color:white;
+  text-decoration: none;
+  top: 15px;
+  left: 10px;
+  font-size: 15px;
+  font-weight: bold;
+  z-index: 1000;
 }
 
 /* Banner box */
@@ -20,22 +32,26 @@ body {
 
 /* Navigation links container */
 .nav-links {
-    margin-top: 40px;
-    font-size: 1rem;
-    padding: 2px;
-    border-radius: 1px;
+  font-size: 1.5rem;
+  font-weight: 700;
+  padding: 0.5em 0.2em;
+  color: white;
+  background-color: black;
+  border-radius:2px;
+  cursor: pointer;
+  
 }
 
 /* Link styles */
-.nav-links a {
-    color: black;
-    text-decoration: none;
-    background-color: white;
-    border-radius:1px;
+a {
+  color: white;
+ text-decoration: none;
 }
 
-.nav-links a:hover, a:focus {
-    background-color: white;
-    outline: none;
-    border-radius: 1px;
+.nav-links a:hover {
+  color: black;
+  background-color: blue;
+  padding: 0.2rem;
+  border-radius: 0;
+
 }
