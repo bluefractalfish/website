@@ -1,8 +1,26 @@
+/* agave regular */
+@font-face{
+  font-family:"agave";
+  src: url('assets/agave_nerd/AgaveNerdFont-Regular.ttf') format('truetype'),
+       url('assets/agave_nerd/AgaveNerdFont-Regular.woff') format('woff');
+  font-weight: normal;
+  font-style:normal;
+}
+
+/* agave bold*/
+@font-face{
+  font-family:"agave";
+  src: url('assets/agave_nerd/AgaveNerdFont-Bold.ttf') format('truetype'),
+       url('assets/agave_nerd/AgaveNerdFont-Bold.woff') format('woff');
+  font-weight: bold; 
+  font-style:normal;
+}
+
 
 body {
     background-color: black;
     color: white;
-    font-family: 'Agave Nerd Font';
+    font-family: "agave";
     text-align: right;
     margin: 20px;
     padding: 0;
@@ -30,28 +48,52 @@ body {
     font-size: 1.5rem;
 }
 
-/* Navigation links container */
-.nav-links {
-  font-size: 1.5rem;
-  font-weight: 700;
-  padding: 0.5em 0.2em;
-  color: white;
-  background-color: black;
-  border-radius:2px;
-  cursor: pointer;
-  
-}
 
 /* Link styles */
 a {
+  position: relative;
   color: white;
- text-decoration: none;
+  text-decoration: none;
 }
 
-.nav-links a:hover {
-  color: black;
-  background-color: blue;
-  padding: 0.2rem;
-  border-radius: 0;
+a::before,
+a::after{
+  content:"";
+  position: relative;
+  transition: all 0.3s ease;
+}
 
+a::before{
+  content:"[";
+  margin-right:2px;
+}
+
+a::after {
+  content:"]";
+  margin-left:2px;
+}
+a:hover::before{
+  margin-right:12px;
+}
+a:hover:after{
+  margin-left:12px;
+}
+
+p {
+  margin-bottom:-16px;
+}
+
+.writing_box{
+  width:50vw;
+  height:fit-content;
+  border:3px solid white;
+  padding: 4px;
+  transform: translateX(70%);
+  margin-top:4px;
+  margin-bottom:4px;
+  display:flex;
+  align-items: stretch;
+  justify-content: stretch;
+  white-space: normal;
+  word-break: break-all;
 }
