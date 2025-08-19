@@ -1,0 +1,43 @@
+.terminal{
+  background:black;
+  color:white;
+  width:min(900px, 70vw);
+  height: 100vh;
+  margin-top: 30px;
+  display: grid;
+  border: 1px solid white;
+  grid-template-rows: auto 1fr;
+}
+.term-line{
+  white-space: pre-wrap;
+  word-break: break-word;
+}
+.term-line .prompt{
+  color:white;
+  content:"> "
+}
+.term-input{
+  white-space:pre;
+}
+.term-left, .term-right{
+  white-space: pre;
+}
+.caret{
+  display: inline-block;
+  width:.6ch;
+  height:1em;
+  animation: blink 1s steps(1) infinite;
+}
+.care.typing{
+  animation:none; 
+  opacity:1;
+}
+@keyframes blink{
+  0%,49% {opacity:1; }
+  50%,100% {opacity:0;}
+}
+.term-output{
+  color:wheat;
+}
+
+
