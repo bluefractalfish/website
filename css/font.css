@@ -1,0 +1,19 @@
+
+/* agave regular */
+@font-face{
+  font-family:"agave";
+  src: url('agave_nerd/AgaveNerdFont-Regular.ttf') format('truetype'),
+       url('agave_nerd/AgaveNerdFont-Regular.woff') format('woff');
+  font-weight: normal;
+  font-style:normal;
+}
+
+/* agave bold*/
+@font-face{
+  font-family:"agave";
+  src: url('agave_nerd/AgaveNerdFont-Bold.ttf') format('truetype'),
+       url('agave_nerd/AgaveNerdFont-Bold.woff') format('woff');
+  font-weight: bold; 
+  font-style:normal;
+}
+

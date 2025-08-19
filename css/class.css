@@ -1,0 +1,101 @@
+.logo {
+  position: fixed;
+  color:white;
+  text-decoration: none;
+  top: 15px;
+  left: 10px;
+  font-size: 15px;
+  font-weight: bold;
+  z-index: 1000;
+}
+
+/*homelogo*/
+l {
+  position: relative;
+  color: white;
+  text-decoration: none;
+  display: inline-block;
+  transition: all 1s ease-in-out;
+  padding: 1px;
+
+}
+l:hover{
+  background-color: white;
+  color: black;
+  letter-spacing: .1rem;
+
+}
+
+l::before,
+l::after{
+  content:"";
+  position: relative;
+  transition: all 1s ease-in-out;
+}
+
+l::before{
+  content:"[";
+  margin-right:1px;
+}
+
+l::after {
+  content:"]";
+  margin-left:1px;
+}
+l:hover::before{
+  content:"[";
+  margin-right:1rem;
+  transition: all 1s ease-in-out;
+}
+l:hover::after{
+  content:"]";
+  margin-left:1rem;
+  transition: all 1s ease-in-out;
+}
+
+a {
+  position: relative;
+  color: white;
+  text-decoration: none;
+}
+
+a::before,
+a::after{
+  content:"";
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+a::before{
+  content:"[";
+  margin-right:2px;
+}
+
+a::after {
+  content:"]";
+  margin-left:2px;
+}
+a:hover::before{
+  margin-right:12px;
+}
+a:hover::after{
+  margin-left:12px;
+}
+p {
+  margin-bottom:-16px;
+}
+
+.writing_box{
+  width:50vw;
+  height:fit-content;
+  border:3px solid white;
+  padding: 4px;
+  transform: translateX(70%);
+  margin-top:4px;
+  margin-bottom:4px;
+  display:flex;
+  align-items: stretch;
+  justify-content: stretch;
+  white-space: normal;
+  word-break: break-all;
+}
