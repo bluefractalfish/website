@@ -1,22 +1,94 @@
+:root {
+  --t-fast: 0.5s;
+  --t-med: 0.8s;
+  --t-slow: 1s;
+  --easing: cubic-bezier(.2,.3,.5,1); 
+}
 .logo {
   position: fixed;
   color:white;
   text-decoration: none;
   top: 15px;
   left: 10px;
-  font-size: 15px;
+  font-size: 16px;
   font-weight: bold;
   z-index: 1000;
 }
 
+.homelogo {
+  display: inline-grid;
+  grid-template-columns: auto auto auto;
+  align-items: center;
+  column-gap: 0;
+  justify-items: center;
+  color: white;
+  background-color: black;
+  text-decoration: none;
+  padding: 0px 4px;
+  cursor: pointer;
+  transition: all var(--t-med) var(--easing);
+}
+.homelogo::before,
+.homelogo::after{
+  display: inline-blocks;
+  content:"";
+  transition: all var(--t-med) var(--easing);
+}
+.homelogo::before{
+  content:"[";
+  grid-column: 1;
+}
+.homelogo::after{
+  content:"]";
+  grid-column: 3;
+}
+.homelogo:hover{
+  column-gap: 1rem;
+  color: black;
+  background-color: white;
+  /*transition: all var(--t-med) var(--easing);*/
+}
+.homelogo:hover::before{
+  transform: translateX(-3px);
+  transition: all var(--t-med) var(--easing);
+}
+.homelogo:hover::after{
+  transform: translateX(3px);
+  transition: all var(--t-med) var(--easing);
+}
+
+.homelogo .text-default{
+  opacity: 1;
+}
+
+.homelogo .text-hover{
+  opacity: 0;
+}
+
+.homelogo > .text-default,
+.homelogo > .text-hover {
+  grid-column: 2;
+  grid-row: 1;
+  white-space: nowrap;
+  transition: all var(--t-med) var(--easing);
+}
+
+.homelogo:hover .text-default{
+  opacity:0;
+}
+
+.homelogo:hover .text-hover{
+  opacity:1;
+}
 /*homelogo*/
 l {
   position: relative;
   color: white;
   text-decoration: none;
   display: inline-block;
-  transition: all 1s ease-in-out;
+  transition: all var(--t-fast) var(--easing);
   padding: 1px;
+  cursor: pointer;
 
 }
 l:hover{
@@ -30,7 +102,7 @@ l::before,
 l::after{
   content:"";
   position: relative;
-  transition: all 1s ease-in-out;
+  transition: all var(--t-fast) var(--easing);
 }
 
 l::before{
@@ -45,12 +117,12 @@ l::after {
 l:hover::before{
   content:"[";
   margin-right:1rem;
-  transition: all 1s ease-in-out;
+  transition: all var(--t-fast) var(--easing);
 }
 l:hover::after{
   content:"]";
   margin-left:1rem;
-  transition: all 1s ease-in-out;
+  transition: all var(--t-fast) var(--easing);
 }
 
 a {
@@ -63,7 +135,7 @@ a::before,
 a::after{
   content:"";
   position: relative;
-  transition: all 0.3s ease;
+  transition: all var(--t-fast) var(--easing);
 }
 
 a::before{
