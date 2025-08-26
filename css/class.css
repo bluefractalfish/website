@@ -3,83 +3,97 @@
   --t-med: 0.8s;
   --t-slow: 1s;
   --easing: cubic-bezier(.2,.3,.5,1); 
+  --accent-color: #FF5e33;
+  --header-h: 10px;
+
+
 }
-.logo {
+
+.page{
+  padding-top: var(--var-h);
+  justify-content: left;
+}
+
+.home-header {
   position: fixed;
-  color:white;
-  text-decoration: none;
-  top: 15px;
-  left: 10px;
-  font-size: 16px;
-  font-weight: bold;
+  background: black;
+  padding: 4px;
+  inset: 0px  20px 10px;
+  height: var(--header-h);
+  display: flex;
+  justify-content: left;
+  align-items: center;
   z-index: 1000;
 }
 
-.homelogo {
+.home {
   display: inline-grid;
   grid-template-columns: auto auto auto;
   align-items: center;
   column-gap: 0;
   justify-items: center;
-  color: white;
-  background-color: black;
+  color: black;
+  background-color: var(--accent-color);
   text-decoration: none;
-  padding: 0px 4px;
+  padding: 1px 4px;
   cursor: pointer;
+  font-weight: bold;
   transition: all var(--t-med) var(--easing);
+  
 }
-.homelogo::before,
-.homelogo::after{
+.home::before,
+.home::after{
   display: inline-blocks;
   content:"";
   transition: all var(--t-med) var(--easing);
 }
-.homelogo::before{
+.home::before{
   content:"[";
   grid-column: 1;
 }
-.homelogo::after{
+.home::after{
   content:"]";
   grid-column: 3;
 }
-.homelogo:hover{
-  column-gap: 1rem;
+.home:hover{
+  column-gap: 2rem;
   color: black;
-  background-color: white;
+  background-color: var(--accent-color);
   /*transition: all var(--t-med) var(--easing);*/
 }
-.homelogo:hover::before{
+.home:hover::before{
   transform: translateX(-3px);
   transition: all var(--t-med) var(--easing);
 }
-.homelogo:hover::after{
+.home:hover::after{
   transform: translateX(3px);
   transition: all var(--t-med) var(--easing);
 }
 
-.homelogo .text-default{
+.home .text-default{
   opacity: 1;
 }
 
-.homelogo .text-hover{
+.home .text-hover{
   opacity: 0;
 }
 
-.homelogo > .text-default,
-.homelogo > .text-hover {
+.home > .text-default,
+.home > .text-hover {
   grid-column: 2;
   grid-row: 1;
   white-space: nowrap;
   transition: all var(--t-med) var(--easing);
 }
 
-.homelogo:hover .text-default{
+.home:hover .text-default{
   opacity:0;
 }
 
-.homelogo:hover .text-hover{
+.home:hover .text-hover{
   opacity:1;
 }
+
 /*homelogo*/
 l {
   position: relative;
@@ -106,12 +120,12 @@ l::after{
 }
 
 l::before{
-  content:"[";
+  content:" [";
   margin-right:1px;
 }
 
 l::after {
-  content:"]";
+  content:"] ";
   margin-left:1px;
 }
 l:hover::before{
@@ -136,15 +150,16 @@ a::after{
   content:"";
   position: relative;
   transition: all var(--t-fast) var(--easing);
+
 }
 
 a::before{
-  content:"[";
+  content:"  [";
   margin-right:2px;
 }
 
 a::after {
-  content:"]";
+  content:"]  ";
   margin-left:2px;
 }
 a:hover::before{

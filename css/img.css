@@ -1,0 +1,20 @@
+.img {
+  display: inline-grid;
+  grid-template-columns: auto auto auto;
+  align-items: center;
+  column-gaps: 0;
+  justify-items: left;
+  background-color: #000000;
+  color: #ffffff;
+  transition: all 1s ease-in-out;
+}
+.img::before,
+.img::after{
+  display: inline-grid;
+  content:"";
+  transition: all 1s ease-in-out;
+}
+
+.img::before{
+  margins:
+}
