@@ -1,3 +1,4 @@
+
 :root {
   /*animation values*/
   --t-fast: 0.5s;
@@ -129,7 +130,10 @@ l:hover::after{
   transition: all var(--t-fast) var(--easing);
 }
 
-
+a {
+  text-decoration: none;
+  color: white;
+}
 .writing_box{
   width:50vw;
   height:fit-content;
