@@ -12,8 +12,6 @@
 
 }
 
-
-
 body {
     background-color: black;
     color: white;
@@ -26,6 +24,9 @@ body {
 
 .page{
   padding-top: var(--header-h);
+  display: flex;
+  justify-content: left;
+
 }
 
 .head {
@@ -86,6 +87,45 @@ body {
   transition: all var(--t-med) var(--easing);
 }
 
+t {
+  position: relative;
+  color: black;
+  text-decoration: none;
+  display: inline-block;
+  transition: all var(--t-fast) var(--easing);
+  padding: 1px;
+  cursor: pointer;
+  margin-inline: 1px;
+
+}
+
+t::before,
+t::after{
+  content:"";
+  position: relative;
+  transition: all var(--t-fast) var(--easing);
+}
+
+t::before{
+  content:"[";
+  margin-right:1px;
+}
+
+t::after {
+  content:"]";
+  margin-left:1px;
+}
+t:hover::before{
+  content:"[";
+  margin-right:1rem;
+  transition: all var(--t-fast) var(--easing);
+}
+t:hover::after{
+  content:"]";
+  margin-left:1rem;
+  transition: all var(--t-fast) var(--easing);
+}
+
 /*logologo*/
 l {
   position: relative;
@@ -134,17 +174,102 @@ a {
   text-decoration: none;
   color: white;
 }
-.writing_box{
-  width:50vw;
-  height:fit-content;
-  border:3px solid white;
-  padding: 4px;
-  transform: translateX(70%);
-  margin-top:4px;
-  margin-bottom:4px;
-  display:flex;
-  align-items: stretch;
-  justify-content: stretch;
-  white-space: normal;
-  word-break: break-all;
+
+.tray-container {
+  position: relative;
+  display: inline-block;
+}
+.tray-button{
+  padding: 1px 2px;
+  background: #ffffff;
+  color: #000000;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+/* The tray panel */
+.tray {
+  justify-content: center;
+  position: absolute;
+  min-width: 220px;
+
+  padding: 8px;
+
+  /* hidden by default */
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-20px);
+
+  /* smooth open/close */
+  transition:
+    opacity 300ms ease,
+    transform 300ms ease,
+    visibility 0s linear 300ms; /* delay hides to after fade-out completes */
+  pointer-events: none; /* avoid hover flicker when hidden */
+}
+
+/* Show tray on hover/focus within container */
+.tray-container:hover .tray,
+.tray-container:focus-within .tray {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+  transition:
+    opacity 300ms ease,
+    transform 300ms ease,
+    visibility 0s; /* become visible immediately */
+  pointer-events: auto;
+}
+
+
+/* Links inside tray */
+.tray a {
+  display: block;
+  width: 100%;
+  box-sizing: border-box;
+  color: #fff;
+  text-decoration: none;
+  line-height: 1.2;
+
+  /* start eased-in state */
+  opacity: 0;
+  transform: translateY(6px);
+  transition:
+    opacity 240ms ease,
+    transform 240ms ease,
+    background-color 200ms ease;
+}
+
+/* Staggered entrance on open */
+.tray-container:hover .tray a,
+.tray-container:focus-within .tray a {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Stagger timings */
+.tray a:nth-child(1) { transition-delay: 60ms; }
+.tray a:nth-child(2) { transition-delay: 120ms; }
+.tray a:nth-child(3) { transition-delay: 180ms; }
+/* add more nth-child rules if you have more links */
+
+/* Remove delay when closing so they ease out together */
+.tray-container:not(:hover):not(:focus-within) .tray a {
+  transition-delay: 0ms;
+}
+
+/* Hover feedback per link */
+.tray a:hover,
+.tray a:focus {
+  background-color: rgba(64,64,64,0.5);
+  outline: none;
+}
+
+/* Respect reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .tray,
+  .tray a {
+    transition: none !important;
+    transform: none !important;
+  }
 }
