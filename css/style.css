@@ -126,7 +126,6 @@ t:hover::after{
   transition: all var(--t-fast) var(--easing);
 }
 
-/*logologo*/
 l {
   position: relative;
   color: white;
@@ -189,7 +188,7 @@ a {
 
 /* The tray panel */
 .tray {
-  justify-content: center;
+  justify-content: left;
   position: absolute;
   min-width: 220px;
 
@@ -198,7 +197,7 @@ a {
   /* hidden by default */
   opacity: 0;
   visibility: hidden;
-  transform: translateY(-20px);
+  transform: translateY(0px);
 
   /* smooth open/close */
   transition:
