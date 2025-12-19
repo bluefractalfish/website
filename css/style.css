@@ -7,14 +7,18 @@
   --easing: cubic-bezier(.2,.3,.5,1); 
 
 
-  --accent-color: #FF5e33;
+  --accent-color: #eaeaea;
+  
+  --white: #eaeaea;
   --header-h: 10px;
 
 }
 
+
+
 body {
     background-color: black;
-    color: white;
+    color: var(--white);
     font-family: "agave";
     text-align: right;
     margin: 20px;
@@ -24,9 +28,7 @@ body {
 
 .page{
   padding-top: var(--header-h);
-  display: flex;
-  justify-content: left;
-
+  text-align: left;
 }
 
 .head {
@@ -34,7 +36,7 @@ body {
   display: flex;
   background: black;
   padding: 10px;
-  inset: 0px  20px 2px;
+  inset: 0px  2px 2px;
   height: var(--header-h);
   justify-content: left;
   align-items: center;
@@ -47,12 +49,12 @@ body {
   grid-template-columns: auto auto auto;
   align-items: center;
   column-gap: 0;
-  justify-items: center;
-  color: black;
+  justify-items: right;
+  color: #171330;
   background-color: var(--accent-color);
   text-decoration: none;
-  padding: 3px 4px;
-  margin-right: 20px;
+  padding:2px 2px 2px 2px;
+  margin: 5px;
   cursor: pointer;
   font-weight: bold;
   transition: all var(--t-med) var(--easing);
@@ -87,48 +89,24 @@ body {
   transition: all var(--t-med) var(--easing);
 }
 
-t {
+.path{
   position: relative;
-  color: black;
+  color: var(--white);
   text-decoration: none;
   display: inline-block;
   transition: all var(--t-fast) var(--easing);
   padding: 1px;
   cursor: pointer;
   margin-inline: 1px;
+}
+.path:hover{
+  letter-spacing: 0.01rem;
 
 }
-
-t::before,
-t::after{
-  content:"";
-  position: relative;
-  transition: all var(--t-fast) var(--easing);
-}
-
-t::before{
-  content:"[";
-  margin-right:1px;
-}
-
-t::after {
-  content:"]";
-  margin-left:1px;
-}
-t:hover::before{
-  content:"[";
-  margin-right:1rem;
-  transition: all var(--t-fast) var(--easing);
-}
-t:hover::after{
-  content:"]";
-  margin-left:1rem;
-  transition: all var(--t-fast) var(--easing);
-}
-
+/*logologo*/
 l {
   position: relative;
-  color: white;
+  color: var(--white);
   text-decoration: none;
   display: inline-block;
   transition: all var(--t-fast) var(--easing);
@@ -139,6 +117,8 @@ l {
 }
 l:hover{
   letter-spacing: .1rem;
+  background-color: #ff5700;
+  color: #000000;
 
 }
 
@@ -171,104 +151,106 @@ l:hover::after{
 
 a {
   text-decoration: none;
-  color: white;
+  color: var(--white);
 }
 
-.tray-container {
-  position: relative;
-  display: inline-block;
+
+.photo-container {
+  display: flex;               /* image left, info right */
+  align-items: center;
+  gap: 16px;                   /* space between image and text */
+  margin: 30px;
+  border-radius: 10px;
 }
-.tray-button{
-  padding: 1px 2px;
-  background: #ffffff;
-  color: #000000;
-  font-weight: bold;
+
+.photo {
+  width: 50vw;
+  height:auto;
+  border-radius: 10px;
+  border: 0px solid var(--white);
+  transition: transform 0.3s ease;
+}
+
+.photo-info {
+  opacity: 0;                  /* hidden by default */
+  transform: translateX(-10px); /* shifted slightly */
+  transition: opacity var(--t-fast) var(--easing), transform var(--t-fast) var(--easing);
+}
+
+.photo:hover {
+  transform: scale(1.03);      /* grow slightly */
+  border: 1px solid var(--accent-color);
+}
+
+.photo:hover + .photo-info {
+  opacity: 1;
+  transform: translateX(0);    /* slide into place */
+}
+.writing-box{
+  width:90vw;
+  height:fit-content;
+  border:1px solid var(--white);
+  padding: 10px;
+  margin-top:4px;
+  margin-bottom:4px;
+  display:flex;
+  align-items: stretch;
+  justify-content: stretch;
+  white-space: normal;
+  word-break: normal;
   cursor: pointer;
+  transition: all var(--t-slow) var(--easing)
+
+}
+.writing-box.collapsed .content{
+  overflow: hidden;
+  max-height: 2.8em;
 }
 
-/* The tray panel */
-.tray {
-  justify-content: left;
-  position: absolute;
-  min-width: 220px;
-
-  padding: 8px;
-
-  /* hidden by default */
-  opacity: 0;
-  visibility: hidden;
-  transform: translateY(0px);
-
-  /* smooth open/close */
-  transition:
-    opacity 300ms ease,
-    transform 300ms ease,
-    visibility 0s linear 300ms; /* delay hides to after fade-out completes */
-  pointer-events: none; /* avoid hover flicker when hidden */
-}
-
-/* Show tray on hover/focus within container */
-.tray-container:hover .tray,
-.tray-container:focus-within .tray {
-  opacity: 1;
-  visibility: visible;
-  transform: translateY(0);
-  transition:
-    opacity 300ms ease,
-    transform 300ms ease,
-    visibility 0s; /* become visible immediately */
-  pointer-events: auto;
-}
-
-
-/* Links inside tray */
-.tray a {
-  display: block;
-  width: 100%;
-  box-sizing: border-box;
-  color: #fff;
-  text-decoration: none;
-  line-height: 1.2;
-
-  /* start eased-in state */
-  opacity: 0;
-  transform: translateY(6px);
-  transition:
-    opacity 240ms ease,
-    transform 240ms ease,
-    background-color 200ms ease;
-}
-
-/* Staggered entrance on open */
-.tray-container:hover .tray a,
-.tray-container:focus-within .tray a {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-/* Stagger timings */
-.tray a:nth-child(1) { transition-delay: 60ms; }
-.tray a:nth-child(2) { transition-delay: 120ms; }
-.tray a:nth-child(3) { transition-delay: 180ms; }
-/* add more nth-child rules if you have more links */
-
-/* Remove delay when closing so they ease out together */
-.tray-container:not(:hover):not(:focus-within) .tray a {
-  transition-delay: 0ms;
-}
-
-/* Hover feedback per link */
-.tray a:hover,
-.tray a:focus {
-  background-color: rgba(64,64,64,0.5);
-  outline: none;
-}
-
-/* Respect reduced motion */
-@media (prefers-reduced-motion: reduce) {
-  .tray,
-  .tray a {
-    transition: none !important;
-    transform: none !important;
+@supports (-webkit-line-clamp: 2) {
+  .writing-box.collapsed .content {
+    max-height: none;                /* superseded by clamp */
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    overflow: clip;                  /* avoids scrollbars */
   }
+}
+
+/* 3) If your browser supports the unprefixed property */
+@supports (line-clamp: 2) {
+  .writing-box.collapsed .content {
+    display: block;
+    line-clamp: 2;
+  }
+}
+
+.writing-box:not(.collapsed) .content {
+  max-height: none;
+  overflow: visible;
+}
+
+/* Optional: nicer animation when expanding/collapsing */
+.writing-box .content {
+  transition: max-height var(--t-slow) var(--easing);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .writing-box .content { transition: none; }
+}
+.box {
+  width:90vw;
+  height:fit-content;
+  padding: 10px;
+  margin-top:4px;
+  margin-bottom:4px;
+  display:flex;
+  align-items: stretch;
+  justify-content: stretch;
+  white-space: normal;
+  word-break: normal;
+  cursor: pointer;
+  transition: all var(--t-slow) var(--easing)
+
+}
 }
