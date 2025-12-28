@@ -1,0 +1,143 @@
+@define-color blk #121217;
+@define-color wht #EEEEEE;
+@define-color red #FF5E33; 
+
+@define-color yel #FFC915;
+@define-color grn #B7CF47;
+@define-color blu #325aaF;
+
+* {
+    font-family: "Agave Nerd Font", "bold";
+    font-size: 13px;
+}
+
+window#waybar {
+    background-color: transparent;
+    transition-property: background-color;
+    transition-duration: .5s;
+}
+
+#workspaces button{
+  color: @wht;
+  background-color: @blk;
+  padding: 0px;
+}
+
+#workspaces button:hover {
+  background: none;
+  border: none;
+  box-shadow: none;
+  text-shadow: none;
+  transition: none;
+}
+
+#workspaces button.visible {
+  padding: 0px;
+  font-weight:800;
+  background:none;
+  color:@blu; 
+}
+
+
+#clock,
+#battery,
+#cpu,
+#memory,
+#disk,
+#temperature,
+#network,
+#pulseaudio,
+#window,
+#workspaces
+
+#pulseaudio {
+  border-radius:6px;
+  padding: 5px;
+  font-weight:300;
+  color: @wht; 
+}
+
+#pulseaudio:hover {
+    font-weight: bold;
+    color: @wht;
+}
+
+#clock {
+    color: @wht;
+    font-weight: bold;
+}
+
+#battery {
+    font-weight: bold;
+    padding: 4px;
+    color: @red;
+}
+
+#battery.charging, #battery.plugged {
+    color: @grn;
+    font-weight: bold;
+}
+
+@keyframes blink {
+    to {
+        background-color: #000000; 
+        color: white;
+    }
+}
+
+#battery.critical:not(.charging) {
+    color: @red;
+    border-radius: 1px;
+    font-weight: bold;
+    animation-name: blink;
+    animation-duration: 2s;
+    animation-timing-function: steps(50);
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
+
+#cpu {
+    background-color: transparent;
+    /*font-weight: bold;*/
+}
+
+#memory {
+    background-color: transparent;
+    color: #aaaaaa;
+    font-weight: 200;
+}
+
+#disk {
+  color: #aaaaaa;
+  font-weight: 300;
+}
+
+#network:hover {
+	color: @red;
+	font-weight: 300;
+}
+#network {
+	color: @wht;
+	font-weight: 900;
+}
+
+#network.disconnected {
+	color: @blk;
+	padding: 0px 5px;
+	border-radius: 1px;
+	font-weight: bold;
+	font-family: "agave nerd font";
+	font-size: 12px;
+ 	background-color: @red;
+}
+
+#temperature {
+    font-weight: 300;
+    color: #aaaaaa;
+    background-color: transparent;
+}
+
+#temperature.critical {
+    color: @red;
+}
