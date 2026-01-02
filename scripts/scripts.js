@@ -1,7 +1,17 @@
 // corner-follow.js
 const boxes = document.querySelectorAll('.box');
+const head = document.getElementById("head");
+const triggerY = 12;
 const maxOffset = 5;
 
+window.addEventListener("scroll", () => {
+  if (window.scrollY > triggerY){
+    head.classList.add("is-fish");
+  } else {
+    head.classList.remove("is-fish");
+  }
+});
+ 
 boxes.forEach(box => {
   const corners = box.querySelectorAll('.corner');
 

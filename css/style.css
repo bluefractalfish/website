@@ -4,17 +4,14 @@ a {
   color: var(--white);
 }
 
-
-
 body {
-    background-color: black;
     color: var(--white);
     font-family: "agave";
-    text-align: right;
     margin: 20px;
     padding: 0;
     min-height: 100vh;
 }
+
 
 
 .box{
@@ -28,9 +25,8 @@ body {
   white-space: normal;
   word-break: normal;
   cursor: pointer;
-  transition: all var(--t-slow) var(--easing)
-
 }
+
 .box .content{
   overflow: hidden;
   text-align: left;
@@ -42,8 +38,6 @@ body {
   font-weight: bold;
   color: #eaeaea
   padding: 3px 6px;
-  border-radius: 4px;
-  transition: transform var(--t-fast) var(--easing);
 }
 
 .corner[pos="top-left"] {top: -19px; left:-2px;  }
@@ -51,29 +45,28 @@ body {
 .corner[pos="bottom-left"] {bottom: -19px; left: -2px;}
 .corner[pos="bottom-right"] {bottom: -19px; right: -2px;} 
 
-/*
-.box:hover .corner[pos="top-left"]{transform: translate(-5px,-5px)}
-.box:hover .corner[pos="top-right"]{transform: translate(5px,-5px)}
-.box:hover .corner[pos="bottom-left"]{transform: translate(-5px,5px)}
-.box:hover .corner[pos="bottom-right"]{transform: translate(5px,5px)}
-*/
+.head,.foot,.page{
+  display:grid;
+  place-items:center;
+  background-color: black;
+}
+
+:where(.head-font,.foot-font,.box,l,.path,.corner){
+  transition: all var(--t-med) var(--easing);
+  color: var(--white);
+  background-color: black;
+}
+
 .foot {
   position:fixed;
-  display: grid;
-  background: black;
   inset:  90vh 0px 0px 0px;
-  justify-content:center;
-  align-items: center;
   z-index: 1000;
-  font-weight: bold;
 }
 
 .foot-font {
-  color: white;
   text-decoration: none;
   cursor: pointer;
   font-weight: bold;
-  transition: all var(--t-med) var(--easing);
   
 }
 h1 {
@@ -82,31 +75,25 @@ h1 {
 }
 .head {
   position: fixed;
-  display: grid;
-  background: black;
   padding-top: 2px;
   inset: 0px  2px 2px;
   height: var(--header-h);
-  justify-content:center;
-  align-items: center;
   z-index: 1000;
-  font-weight: bold;
 }
 
 .head-font {
   display: inline-grid;
+  position: relative;
   grid-template-columns: auto auto auto;
   align-items: center;
   column-gap: 0;
-  justify-items: right;
   color: #171330;
   background-color: var(--accent-color);
   text-decoration: none;
-  padding:2px 2px 2px 2px;
+  padding:2px;
   margin: 5px;
   cursor: pointer;
   font-weight: bold;
-  transition: all var(--t-med) var(--easing);
   
 }
 .head-font::before,
@@ -116,28 +103,27 @@ h1 {
   transition: all var(--t-med) var(--easing);
 }
 .head-font::before{
-  content:"[";
+  content:"<";
   grid-column: 1;
 }
 .head-font::after{
-  content:"]";
+  content:">";
   grid-column: 3;
 }
 .head-font:hover{
   column-gap: 2rem;
-  padding: 0px 10px; 
+  padding: 2px 10px; 
   color: black;
   background-color: var(--accent-color);
   /*transition: all var(--t-med) var(--easing);*/
 }
 .head-font:hover::before{
   transform: translateX(-3px);
-  transition: all var(--t-med) var(--easing);
 }
 .head-font:hover::after{
   transform: translateX(3px);
-  transition: all var(--t-med) var(--easing);
 }
+
 
 l {
   position: relative;
@@ -145,7 +131,6 @@ l {
   color: var(--white);
   text-decoration: none;
   display: inline-block;
-  transition: all var(--t-fast) var(--easing);
   padding: 1px;
   cursor: pointer;
   margin-inline: 1px;
@@ -154,15 +139,12 @@ l {
 l:hover{
   letter-spacing: .05rem;
   background-color: #ff5700;
-  color: #000000;
-
 }
 
 l::before,
 l::after{
   content:"";
   position: relative;
-  transition: all var(--t-fast) var(--easing);
 }
 
 l::before{
@@ -177,69 +159,17 @@ l::after {
 l:hover::before{
   content:"";
   margin-right:1rem;
-  transition: all var(--t-fast) var(--easing);
 }
 l:hover::after{
   content:"";
   margin-left:1rem;
-  transition: all var(--t-fast) var(--easing);
 }
+
 .page{
-  display: grid;
   margin-top: var(--header-h);
   padding-top: 12px;
-  background: black;
-  text-align: center;
-  align-items: center;
-  justify-content: center;
 }
 
-.path{
-  position: relative;
-  color: var(--white);
-  text-decoration: none;
-  display: inline-block;
-  transition: all var(--t-fast) var(--easing);
-  padding: 1px;
-  cursor: pointer;
-  margin-inline: 1px;
-}
-.path:hover{
-  letter-spacing: 0.01rem;
-
-}
-
-.photo-container {
-  display: flex;               /* image left, info right */
-  align-items: center;
-  gap: 16px;                   /* space between image and text */
-  margin: 30px;
-  border-radius: 10px;
-}
-
-.photo {
-  width: 50vw;
-  height:auto;
-  border-radius: 10px;
-  border: 0px solid var(--white);
-  transition: transform 0.3s ease;
-}
-
-.photo-info {
-  opacity: 0;                  /* hidden by default */
-  transform: translateX(-10px); /* shifted slightly */
-  transition: opacity var(--t-fast) var(--easing), transform var(--t-fast) var(--easing);
-}
-
-.photo:hover {
-  transform: scale(1.03);      /* grow slightly */
-  border: 1px solid var(--accent-color);
-}
-
-.photo:hover + .photo-info {
-  opacity: 1;
-  transform: translateX(0);    /* slide into place */
-}
 
 :root {
   /*animation values*/
