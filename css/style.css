@@ -5,11 +5,11 @@ a {
 }
 
 body {
-    color: var(--white);
     font-family: "agave";
     margin: 20px;
-    padding: 0;
     min-height: 100vh;
+    color: white;
+    background-color: black;
 }
 
 
@@ -96,12 +96,6 @@ h1 {
   font-weight: bold;
   
 }
-.head-font::before,
-.head-font::after{
-  display: inline-blocks;
-  content:"";
-  transition: all var(--t-med) var(--easing);
-}
 .head-font::before{
   content:"<";
   grid-column: 1;
@@ -123,7 +117,27 @@ h1 {
 .head-font:hover::after{
   transform: translateX(3px);
 }
+.head-font.is-fish{
+  color: transparent;
+  background-color: black;
+}
+.head-font.is-fish::before{
+    animation: left-bracket-in 220ms cubic-bezier(.2,.9,.3,1) forwards;
+}
+.head-font.is-fish::after{
+    animation: right-bracket-in 220ms cubic-bezier(.2,.9,.3,1) forwards;
+    box-shadow: 1.1em 0 0 0 var(--white);
+}
 
+@keyframes left-bracket-in {
+  from { transform: translateX(-0.6em); }
+  to   { transform: translateX(0); }
+}
+
+@keyframes right-bracket-in {
+  from { transform: translateX(0.6em); }
+  to   { transform: translateX(0); }
+}
 
 l {
   position: relative;
