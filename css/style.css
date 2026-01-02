@@ -37,13 +37,13 @@ body {
   font-size: 13px;
   font-weight: bold;
   color: #eaeaea
-  padding: 3px 6px;
+  padding: 6px 6px;
 }
 
-.corner[pos="top-left"] {top: -19px; left:-2px;  }
-.corner[pos="top-right"] {top: -19px; right:-2px;}
-.corner[pos="bottom-left"] {bottom: -19px; left: -2px;}
-.corner[pos="bottom-right"] {bottom: -19px; right: -2px;} 
+.corner[pos="top-left"] {top: -19px; left:-10px;  }
+.corner[pos="top-right"] {top: -19px; right:-10px;}
+.corner[pos="bottom-left"] {bottom: -19px; left: -10px;}
+.corner[pos="bottom-right"] {bottom: -19px; right: -10px;} 
 
 .head,.foot,.page{
   display:grid;
@@ -84,24 +84,24 @@ h1 {
 .head-font {
   display: inline-grid;
   position: relative;
-  grid-template-columns: auto auto auto;
+  font-size: 14pt;
+  grid-template-columns: 1ch auto 2ch;
   align-items: center;
   column-gap: 0;
-  color: #171330;
-  background-color: var(--accent-color);
   text-decoration: none;
   padding:2px;
   margin: 5px;
   cursor: pointer;
   font-weight: bold;
+  --fish-t: 0;
   
 }
 .head-font::before{
-  content:"<";
+  content:"< ";
   grid-column: 1;
 }
 .head-font::after{
-  content:">";
+  content:" ><";
   grid-column: 3;
 }
 .head-font:hover{
@@ -122,21 +122,22 @@ h1 {
   background-color: black;
 }
 .head-font.is-fish::before{
-    animation: left-bracket-in 220ms cubic-bezier(.2,.9,.3,1) forwards;
+    animation: left-bracket-in 1s cubic-bezier(.2,.9,.3,1) forwards;
+    color: var(--white);
 }
 .head-font.is-fish::after{
-    animation: right-bracket-in 220ms cubic-bezier(.2,.9,.3,1) forwards;
-    box-shadow: 1.1em 0 0 0 var(--white);
+    animation: right-bracket-in 1s cubic-bezier(.2,.9,.3,1) forwards;
+    color: var(--white);
 }
 
 @keyframes left-bracket-in {
-  from { transform: translateX(-0.6em); }
-  to   { transform: translateX(0); }
+  from { transform: translateX(0); }
+  to   { transform: translateX(calc(3em*(var(--fish-t)))); }
 }
 
 @keyframes right-bracket-in {
-  from { transform: translateX(0.6em); }
-  to   { transform: translateX(0); }
+  from { transform: translateX(0); }
+  to   { transform: translateX(calc(-3em*(var(--fish-t)))); }
 }
 
 l {
@@ -153,6 +154,7 @@ l {
 l:hover{
   letter-spacing: .05rem;
   background-color: #ff5700;
+  color: black;
 }
 
 l::before,

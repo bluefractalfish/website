@@ -1,19 +1,22 @@
 // corner-follow.js
 const boxes = document.querySelectorAll('.box');
-const head = document.getElementById("head");
-const triggerY = 12;
-const maxOffset = 5;
+const maxOffset = 15;
+
+const head = document.querySelector(".head-font");
 
 window.addEventListener("scroll", () => {
-  if (window.scrollY > triggerY){
-    head.classList.add("is-fish");
-  } else {
-    head.classList.remove("is-fish");
-  }
+  const vh = window.innerHeight;
+  const start = .05*vh;
+  const end = .45*vh;
+  const t = Math.min(
+    Math.max((window.scrollY - start) / (end-start),0),1);
+  head.classList.toggle("is-fish", window.scrollY > 3);
+  head.style.setProperty("--fish-t",t);
 });
+
  
 boxes.forEach(box => {
-  const corners = box.querySelectorAll('.corner');
+  const corners = box.querySelectorAll('.corners');
 
   box.addEventListener('mousemove', e => {
     const boxRect = box.getBoundingClientRect();
