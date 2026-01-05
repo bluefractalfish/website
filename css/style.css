@@ -211,6 +211,46 @@ l:hover::after{
 }
 
 
+
+#posts {
+  max-width: 65ch;
+  margin: auto;
+  padding: 3rem 1.5rem;
+
+  display: grid;
+  gap: 4rem;
+}
+
+/* Each written piece */
+#posts words {
+  padding-bottom: 3rem;
+  border-bottom: 1px solid #333;
+}
+
+/* Headings from markdown */
+#posts h1 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+/* Paragraphs */
+#posts p {
+  line-height: 1.6;
+  margin-bottom: 1rem;
+}
+
+/* Lists */
+#posts ul {
+  padding-left: 1.2rem;
+}
+
+/* Code blocks */
+#posts pre {
+  background: #111;
+  padding: 1rem;
+  overflow-x: auto;
+}
+
 :root {
   /*animation values*/
   --t-fast: 0.5s;
