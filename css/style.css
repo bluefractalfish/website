@@ -16,7 +16,7 @@
 
 a { text-decoration: none; color: var(--white);}
 
-body { margin: 20px; min-height: 100vh;}
+body { background-color: black; margin: 20px; min-height: 100vh;}
 
 .box{
   position: relative;
