@@ -206,6 +206,7 @@ l:hover::after{
 .page{
   margin-top: var(--header-h);
   padding-top: 12px;
+  margin-bottom: 100px;
 }
 
 
