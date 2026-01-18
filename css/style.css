@@ -20,34 +20,48 @@ body { background-color: black; margin: 20px; min-height: 100vh;}
 
 .box{
   position: relative;
-  width: fit-content;
-  height:fit-content;
+  width: auto;
+  height:auto;
   border:1px solid var(--white);
-  padding: 10px;
-  margin:20px;
+  padding: 2px;
+  margin: 25px;
+  margin-inline:auto;
   display:flex;
   white-space: normal;
   word-break: normal;
   cursor: pointer;
+  overflow: visible;
 }
-
+.box a {display: block;}
 .box .content{
   overflow: hidden;
   text-align: left;
+  display: flex;
+  height: auto;
+}
+
+.box-photo{
+  height: auto;
+  width: auto;
+  max-height: 80vh;
+  max-width: 100%;
+  object-fit: contain;
+  display: block;
 }
 
 .corner {
+  background: none;
   position: absolute;
   font-size: 13px;
   font-weight: bold;
-  color: #eaeaea
+  color: #eaeaea;
   padding: 6px 6px;
 }
 
-.corner[pos="top-left"] {top: -19px; left:-10px;  }
-.corner[pos="top-right"] {top: -19px; right:-10px;}
-.corner[pos="bottom-left"] {bottom: -19px; left: -10px;}
-.corner[pos="bottom-right"] {bottom: -19px; right: -10px;} 
+.corner[pos="top-left"] {top: -25px; left:-10px;  }
+.corner[pos="top-right"] {top: -25px; right:-10px;}
+.corner[pos="bottom-left"] {bottom: -25px; left: -10px;}
+.corner[pos="bottom-right"] {bottom: -25px; right: -10px;} 
 
 .body,.head,.foot,.page{
   font-family: "agave";
