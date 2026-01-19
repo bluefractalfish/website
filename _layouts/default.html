@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>{{ page.title | default: site.title }}</title>
+
+  <link rel="stylesheet" href="{{ '/css/font.css' | relative_url }}">
+  <link rel="stylesheet" href="{{ '/css/style.css' | relative_url }}">
+</head>
+<body>
+  <header class="head">
+    <div class="head-font" id="head">fractal.fish</div>
+  </header>
+
+  <div class="page">
+    {{ content }}
+    <div class="foot">
+      <div class="foot-font">
+        <a href="https://qu.in.net" target="_blank"><l>/qu.in.net</l></a>
+        <a href="https://github.com/bluefractalfish" target="_blank"><l>/bluefractalfish</l></a>
+      </div>
+    </div>
+  </div>
+
+  <script src="{{ '/scripts/scripts.js' | relative_url }}"></script>
+</body>
+</html>

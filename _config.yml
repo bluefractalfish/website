@@ -1,0 +1,7 @@
+title: fractal.fish
+markdown: kramdown
+
+baseurl: ""
+url: "https://fractal.fish"
+
+permalink: /:year/:month/:day/:title/

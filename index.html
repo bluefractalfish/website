@@ -1,100 +1,26 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>&lt;&gt&lt;</title>
-  <link rel="stylesheet" href="css/font.css">
-  <link rel="stylesheet" href="css/style.css">
-  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
-</head>
-<body>
-  <header class="head">
-    <div class = "head-font" id="head"> 
-      fractal.fish 
-    </div>
-    
-  </header>
-<div class="page">
-    <div class="box" role="button" aria-expanded="false: tabindex=0">
+---
+layout: default
+title: fractal.fish
+---
+{% for post in site.posts %}
+  <div class="box" role="button">
+    {% if post.image %}
+      <a href="{{ post.url | relative_url }}">
+        <img src="{{ post.image | relative_url }}" alt="{{ post.title }}" class="box-photo" loading="lazy">
+      </a>
+      <div class="corner" pos="top-left">{{ post.top_left }}</div>
+      <div class="corner" pos="top-right">{{ post.top_right }}</div>
+      <div class="corner" pos="bottom-left">{{ post.bottom_left }}</div>
+      <div class="corner" pos="bottom-right">{{ post.bottom_right }}</div>
+    {% else %}
       <div class="content">
-        <h1><><</h1>
+        <h1>{{ post.title }}</h1>
       </div>
-        <div class="corner" pos="top-left">A</div>
-        <div class="corner" pos="top-right">S</div>
-        <div class="corner" pos="bottom-left">S</div>
-        <div class="corner" pos="bottom-right">O</div>
-    </div>
+      <div class="corner" pos="top-left">{{ post.date | date: "%y%m%d" }}</div>
+      <div class="corner" pos="top-right">post</div>
+      <div class="corner" pos="bottom-left"></div>
+      <div class="corner" pos="bottom-right"></div>
+    {% endif %}
+  </div>
+{% endfor %}
 
-    <div class="box" role="button" aria-expanded="false: tabindex=0">
-        <a href="assets/arches_eyes.JPG" target="_blank">
-          <img src="assets/arches_eyes.JPG" alt="arches_eyes" class="box-photo" loading="lazy">
-        </a>
-        <div class="corner" pos="top-left">260113</div>
-        <div class="corner" pos="top-right">arches, UT</div>
-        <div class="corner" pos="bottom-left">4000x3000</div>
-        <div class="corner" pos="bottom-right">0</div>
-    </div>
-
-    <div class="box" role="button" aria-expanded="false: tabindex=0">
-        <a href="assets/through_an_arch.JPG" target="_blank">
-          <img src="assets/through_an_arch.JPG" alt="through_an_arch" class="box-photo" loading="lazy">
-        </a>
-        <div class="corner" pos="top-left">260113</div>
-        <div class="corner" pos="top-right">arches, UT</div>
-        <div class="corner" pos="bottom-left">4000x3000</div>
-        <div class="corner" pos="bottom-right">1</div>
-    </div>
-
-
-    <div class="box" role="button" aria-expanded="false: tabindex=0">
-        <a href="assets/stone_madams.JPG" target="_blank">
-          <img src="assets/stone_madams.JPG" alt="stone_madams" class="box-photo" loading="lazy">
-        </a>
-        <div class="corner" pos="top-left">260113</div>
-        <div class="corner" pos="top-right">arches, UT</div>
-        <div class="corner" pos="bottom-left">4000x3000</div>
-        <div class="corner" pos="bottom-right">2</div>
-    </div>
-
-    <div class="box" role="button" aria-expanded="false: tabindex=0">
-        <a href="assets/la_sal_golems.JPG" target="_blank">
-          <img src="assets/la_sal_golems.JPG" alt="la_sal_golems" class="box-photo" loading="lazy">
-        </a>
-        <div class="corner" pos="top-left">260113</div>
-        <div class="corner" pos="top-right">arches, UT</div>
-        <div class="corner" pos="bottom-left">4000x3000</div>
-        <div class="corner" pos="bottom-right">3</div>
-    </div>
-
-    <div class="box" role="button" aria-expanded="false: tabindex=0">
-        <a href="assets/patagonia_test_1.JPG" target="_blank">
-          <img src="assets/patagonia_test_1.JPG" alt="patagonia_test_1" class="box-photo" loading="lazy">
-        </a>
-        <div class="corner" pos="top-left">260113</div>
-        <div class="corner" pos="top-right">arches, UT</div>
-        <div class="corner" pos="bottom-left">4000x3000</div>
-        <div class="corner" pos="bottom-right">4</div>
-    </div>
-
-    <div class="box" role="button" aria-expanded="false: tabindex=0">
-        <a href="assets/among_giants.JPG" target="_blank">
-          <img src="assets/among_giants.JPG" alt="among_giants" class="box-photo" loading="lazy">
-        </a>
-        <div class="corner" pos="top-left">260113</div>
-        <div class="corner" pos="top-right">arches, UT</div>
-        <div class="corner" pos="bottom-left">4000x3000</div>
-        <div class="corner" pos="bottom-right">5</div>
-    </div>
-
-
-
-  <script src="scripts/scripts.js"></script>
-    <div class="foot">
-      <div class="foot-font">
-         <a href="https://qu.in.net" target="_blank" ><l>/qu.in.net</l></a> 
-         <a href="https://github.com/bluefractalfish" target="_blank"><l>/bluefractalfish</l></a>
-      </div>
-    </div>
-</div>
-</body>
