@@ -5,9 +5,10 @@
   const y = document.getElementById("cursorY");
   if (!x || !y) return;
 
+  const pad4 = (n) => String(n).padStart(4,"0");
   addEventListener("mousemove", (e) => {
-    x.textContent = e.clientX;
-    y.textContent = e.clientY;
+    x.textContent = pad4(e.clientX);
+    y.textContent = pad4(e.clientY);
   }, { passive: true });
 })();
 
