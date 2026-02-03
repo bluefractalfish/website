@@ -5,3 +5,12 @@ baseurl: ""
 url: "https://fractal.fish"
 
 permalink: /:year/:month/:day/:title/
+
+
+cursor_readout:
+  enabled: true
+  default_x: 0
+  default_y: 0
+  mode: "client"     
+  label_x: "x:"
+  label_y: "y:"

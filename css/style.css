@@ -63,6 +63,21 @@ body { background-color: black; margin: 20px; min-height: 100vh;}
 .corner[pos="bottom-left"] {bottom: -25px; left: -10px;}
 .corner[pos="bottom-right"] {bottom: -25px; right: -10px;} 
 
+.cursor-readout {
+  position: absolute;
+  right: 0.75rem;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  gap: 0.6rem;
+}
+.cursor-field {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  color: var(--white);
+}
+
 .body,.head,.foot,.page{
   font-family: "agave";
   display:grid;

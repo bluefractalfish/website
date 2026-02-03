@@ -14,4 +14,16 @@ window.addEventListener("scroll", () => {
   head.style.setProperty("--fish-t",t);
 });
 
+// cursor readout
+(() => {
+  const x = document.getElementById("cursorX");
+  const y = document.getElementById("cursorY");
+  if (!x || !y) return;
+
+  addEventListener("mousemove", (e) => {
+    x.textContent = e.clientX;
+    y.textContent = e.clientY;
+  }, { passive: true });
+})();
+
 
