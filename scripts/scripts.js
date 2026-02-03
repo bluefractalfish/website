@@ -1,4 +1,20 @@
+
+// cursor readout
+(() => {
+  const x = document.getElementById("cursorX");
+  const y = document.getElementById("cursorY");
+  if (!x || !y) return;
+
+  addEventListener("mousemove", (e) => {
+    x.textContent = e.clientX;
+    y.textContent = e.clientY;
+  }, { passive: true });
+})();
+
+
+
 // corner-follow.js
+
 const boxes = document.querySelectorAll('.box');
 const maxOffset = 15;
 
@@ -13,17 +29,4 @@ window.addEventListener("scroll", () => {
   head.classList.toggle("is-fish", window.scrollY > 3);
   head.style.setProperty("--fish-t",t);
 });
-
-// cursor readout
-(() => {
-  const x = document.getElementById("cursorX");
-  const y = document.getElementById("cursorY");
-  if (!x || !y) return;
-
-  addEventListener("mousemove", (e) => {
-    x.textContent = e.clientX;
-    y.textContent = e.clientY;
-  }, { passive: true });
-})();
-
 

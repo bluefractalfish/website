@@ -10,20 +10,12 @@
 </head>
 <body>
   <header class="head">
-    <div class="head-font" id="head">fractal.fish</div>
-
-    {% if site.cursor_readout.enabled %}
-    <div class="cursor-readout" data-mode="{{ site.cursor_readout.mode }}" aria-hidden="true">
-      <span class="cursor-field">
-        {{ site.cursor_readout.label_x}}
-        <span id="cursorX">{{ site.cursor_readout.default_x}}</span>
-      </span>
-      <span class="cursor-field">
-        {{ site.cursor_readout.label_y}}
-        <span id="cursorY">{{ site.cursor_readout.default_y}}</span>
-      </span>
-    </div>
-    {% endif %}
+    <div class ="head-row">
+      <span class="cursor-field">x:<span id="cursorX">0</span></span>
+      <div class="head-font" id="head">fractal.fish</div>
+      <span class="cursor-field">y:<span id="cursorY">0</span></span>
+      </div>
+    <script src="{{ '/scripts/scripts.js' | relative_url }}"></script>
   </header>
 
   <div class="page">
@@ -36,6 +28,5 @@
     </div>
   </div>
 
-  <script src="{{ '/scripts/scripts.js' | relative_url }}"></script>
 </body>
 </html>

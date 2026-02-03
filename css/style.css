@@ -109,6 +109,13 @@ h1 {
   margin-bottom:0;
 }
 
+.head-row{
+  display: flex;
+  align-items: center;
+  justify-center: center;
+  gap: 0.75rem
+}
+
 .head {
   position: fixed;
   padding-top: 2px;
