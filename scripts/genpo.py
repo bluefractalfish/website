@@ -30,6 +30,21 @@ def parse_exif_dt(tags: dict) -> datetime | None:
             except ValueError:
                 pass
     return None
+
+def get_camera_model(tags: dict) -> str:
+    make = str(tags.get("Image Make", "")).strip()
+    model = str(tags.get("Image Model", "")).strip()
+
+    # Optional extras if you want them:
+    lens = str(tags.get("EXIF LensModel", "")).strip()
+
+    # Build a nice string
+    cam = " ".join([x for x in [make, model] if x])
+    if not cam:
+        return ""
+    cam = cam.split()[-1]
+    if lens: cam = f"{cam} | {lens}"
+    return cam
 def parse_gps(tags: dict) -> str:
     # Returns "lat, lon" or "" if not available
     try:
@@ -43,7 +58,7 @@ def parse_gps(tags: dict) -> str:
 
         lat = dms_to_decimal(lat_tag.values, lat_ref)
         lon = dms_to_decimal(lon_tag.values, lon_ref)
-        return f"{lat:.6f}, {lon:.6f}"
+        return f"{lat}x{lon}"
     except Exception:
         return "00000,00000"
 def image_dimensions(path: Path) -> tuple[int,int] | tuple[None,None]:
@@ -74,6 +89,7 @@ def main(force: bool=False, dry: bool = False, verbose: bool = False):
     if not images:
         print("nothing to be found here my friend")
         return
+    i = 0
     for img_path in images:
         base = img_path.stem 
         title = base
@@ -91,6 +107,7 @@ def main(force: bool=False, dry: bool = False, verbose: bool = False):
         w, h = image_dimensions(img_path)
         dims = f"{w}x{h}" if w and h else "AxB"
         coords = parse_gps(tags)
+        model = get_camera_model(tags)
         date_str = ymd(dt)
         date_fmt = yymmdd(dt)
         slug = slugify(title)
@@ -100,10 +117,10 @@ def main(force: bool=False, dry: bool = False, verbose: bool = False):
         md_text = build_md(
                 title=title,
                 web_path=f"/assets/{img_path.name}",
-                top_left=date_fmt,
-                top_right=coords,
-                bottom_left=dims,
-                bottom_right='01N',
+                top_left=f"{date_fmt}_{i}",
+                top_right=title,
+                bottom_left=model,
+                bottom_right=dims,
                 )
         if md_path.exists() and not force:
             if verbose:
@@ -115,6 +132,7 @@ def main(force: bool=False, dry: bool = False, verbose: bool = False):
         else:
             md_path.write_text(md_text, encoding="utf-8")
             print(f"wrote: {md_path.relative_to(ROOT)}")
+        i = i+1
 
 if __name__ == "__main__":
     import argparse

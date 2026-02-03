@@ -2,8 +2,8 @@
 layout: post
 title: arches_eyes
 image: /assets/arches_eyes.JPG
-top_left: "260113"
-top_right: ""
-bottom_left: "4000x3000"
-bottom_right: "01N"
+top_left: "260113_1"
+top_right: "arches_eyes"
+bottom_left: "TG-7"
+bottom_right: "4000x3000"
 ---
