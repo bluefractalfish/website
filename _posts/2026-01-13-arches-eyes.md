@@ -1,6 +1,7 @@
 ---
 layout: post
 title: arches_eyes
+section: red
 image: /assets/arches_eyes.JPG
 top_left: "260113_1"
 top_right: "arches_eyes"

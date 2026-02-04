@@ -1,6 +1,7 @@
 ---
 layout: post
 title: among_giants
+section: red
 image: /assets/among_giants.JPG
 top_left: "260113_0"
 top_right: "among_giants"

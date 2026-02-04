@@ -67,11 +67,12 @@ def image_dimensions(path: Path) -> tuple[int,int] | tuple[None,None]:
             return im.size[0],im.size[1]
     except Exception:
         return None, None
-def build_md(title: str,web_path: str,top_left: str,top_right: str, bottom_left: str, bottom_right: str) -> str:
+def build_md(title: str, section: str, web_path: str,top_left: str,top_right: str, bottom_left: str, bottom_right: str) -> str:
     lines = [
             "---",
             "layout: post",
             f"title: {title}",
+            f"section: {section}",
             f"image: {web_path}",
             f'top_left: "{top_left}"',
             f'top_right: "{top_right}"',
@@ -82,7 +83,7 @@ def build_md(title: str,web_path: str,top_left: str,top_right: str, bottom_left:
         ]
     return "\n".join(lines)
 
-def main(force: bool=False, dry: bool = False, verbose: bool = False):
+def main(section: str, force: bool=False, dry: bool = False, verbose: bool = False):
     if not ASSETS.exists():
         raise SystemExit(f"missing asset directory")
     images = sorted([p for p in ASSETS.iterdir() if p.is_file() and IMG_RE.match(p.name)])
@@ -116,6 +117,7 @@ def main(force: bool=False, dry: bool = False, verbose: bool = False):
 
         md_text = build_md(
                 title=title,
+                section=section,
                 web_path=f"/assets/{img_path.name}",
                 top_left=f"{date_fmt}_{i}",
                 top_right=title,
@@ -137,10 +139,11 @@ def main(force: bool=False, dry: bool = False, verbose: bool = False):
 if __name__ == "__main__":
     import argparse
 
-    parser = argparse.ArgumentParser(description="Generate Jekyll posts from /assets images")
-    parser.add_argument("--force", action="store_true", help="Overwrite existing .md files")
-    parser.add_argument("--dry", action="store_true", help="Print output but do not write files")
-    parser.add_argument("--verbose", action="store_true", help="Print skip info")
+    parser = argparse.ArgumentParser(description="generate Jekyll posts from /assets images")
+    parser.add_argument("--section", required=True, help="one, two, red, blue")
+    parser.add_argument("--force", action="store_true", help="overwrite existing .md files")
+    parser.add_argument("--dry", action="store_true", help="print output but do not write files")
+    parser.add_argument("--verbose", action="store_true", help="print skip info")
     args = parser.parse_args()
 
-    main(force=args.force, dry=args.dry, verbose=args.verbose)
+    main(args.section, force=args.force, dry=args.dry, verbose=args.verbose)

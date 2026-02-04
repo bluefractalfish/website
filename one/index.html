@@ -1,0 +1,18 @@
+---
+layout: default
+title: one
+---
+
+{% assign items = site.posts | where: "section", "one" %}
+{% for post in items %}
+  <div class="box" role="button" aria-expanded="false" tabindex="0">
+    <a href="{{ post.url | relative_url }}">
+      <img src="{{ post.image | relative_url }}" alt="{{ post.title | escape }}" class="box-photo" loading="lazy">
+    </a>
+    <div class="corner" pos="top-left">{{ post.top_left }}</div>
+    <div class="corner" pos="top-right">{{ post.top_right }}</div>
+    <div class="corner" pos="bottom-left">{{ post.bottom_left }}</div>
+    <div class="corner" pos="bottom-right">{{ post.bottom_right }}</div>
+  </div>
+{% endfor %}
+
