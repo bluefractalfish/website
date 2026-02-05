@@ -179,10 +179,10 @@ h1 {
 }
 
 .head-row{
-  display: flex;
+  display: grid;
+  grid-template-columns: 100ch 1fr 100ch;
   align-items: center;
-  justify-center: center;
-  gap: 1rem
+  width: 100%;
 }
 
 .head {
