@@ -90,9 +90,10 @@ body { background-color: black; margin: 20px; min-height: 100vh;}
   gap: .02em;
   text-decoration: none;
   color: inherit;
+  font-size: 1.3rem;
 }
 
-a.ffish .f0{ font-family: ui-serif, "Times New Roman", serif !important; }
+a.ffish .f0{ font-family: ui-serif, "Times New Roman", serif !important;}
 a.ffish .f1{ font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial !important ; }
 a.ffish .f2{ font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace !important; }
 a.ffish .f3{ font-family: "Courier New", monospace !important; }
