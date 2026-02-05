@@ -179,7 +179,7 @@ h1 {
 }
 
 .head-row{
-  display: grid;
+  display: flex;
   align-items: left;
   justify-center: center;
   gap: 1rem
