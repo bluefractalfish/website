@@ -85,6 +85,11 @@ body { background-color: black; margin: 20px; min-height: 100vh;}
   background-color: black;
 }
 
+.fishy{
+  position: relative;
+  font-size: 6rem;
+  letter-spacing: -25px;
+}
 .foot {
   position:fixed;
   inset:  90vh 0px 0px 0px;
