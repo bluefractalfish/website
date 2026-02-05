@@ -14,7 +14,7 @@
 
 }
 
-.l {
+.link {
   position: relative;
   font-weight: bold;
   color: var(--white);
@@ -25,32 +25,32 @@
   margin-inline: 1px;
   transition: all 1s ease;
 }
-.l:hover{
+.link:hover{
   letter-spacing: .08rem;
   background-color: #eaeaea;
   color: black;
 }
 
-.l::before,
-.l::after{
+.link::before,
+.link::after{
   content:"";
   position: relative;
 }
 
-.l::before{
+.link::before{
   content:"";
   margin-right:1px;
 }
 
-.l::after {
+.link::after {
   content:"";
   margin-left:1px;
 }
-.l:hover::before{
+.link:hover::before{
   content:"";
   margin-right:1rem;
 }
-.l:hover::after{
+.link:hover::after{
   content:"";
   margin-left:1rem;
 }
@@ -74,6 +74,7 @@ body { background-color: black; margin: 20px; min-height: 100vh;}
 .box a {display: flex;}
 .box .content{
   overflow: hidden;
+  width: 70vw;
   text-align: left;
   display: flex;
   height: auto;
