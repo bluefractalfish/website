@@ -180,8 +180,8 @@ h1 {
 
 .head-row{
   display: grid;
-  grid-template-columns: 100ch 1fr 100ch;
-  align-items: center;
+  grid-template-columns: 10vw 90vw;
+  align-items: left;
   width: 100%;
 }
 
