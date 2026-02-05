@@ -181,7 +181,9 @@ h1 {
 .head-row{
   display: grid;
   grid-template-columns: auto;
-  align-items: left;
+  align-items: center;
+  justify-center: center;
+  gap: 1rem
   width: 100%;
 }
 
