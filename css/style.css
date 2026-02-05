@@ -180,7 +180,7 @@ h1 {
 
 .head-row{
   display: flex;
-  align-items: left;
+  align-items: center;
   justify-center: center;
   gap: 1rem
 }
