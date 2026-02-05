@@ -85,6 +85,31 @@ body { background-color: black; margin: 20px; min-height: 100vh;}
   background-color: black;
 }
 
+.ffish{
+  display: inline-flex;
+  gap: .02em;
+  text-decoration: none;
+  color: inherit;
+  font-size: 2rem;
+  line-height: 1;
+}
+
+.f0{ font-family: ui-serif, "Times New Roman", serif; }
+.f1{ font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial; }
+.f2{ font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace; }
+.f3{ font-family: "Courier New", monospace; }
+.f4{ font-family: ui-serif, Georgia, Cambria, "Times New Roman", Times, serif; }
+.f5{ font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; }
+.f6{ font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace; }
+
+.ffish span{
+  display: inline-block;
+  transition: transform .15s ease;
+}
+.ffish span:hover{
+  transform: translateY(-.05em);
+}
+
 .fishy{
   position: relative;
   font-size: 7rem;
@@ -188,7 +213,6 @@ h1 {
   from { transform: translateX(0); }
   to   { transform: translateX(calc(-3em*(var(--fish-t)))); }
 }
-
 l {
   position: relative;
   font-weight: bold;

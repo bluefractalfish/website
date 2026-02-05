@@ -12,6 +12,39 @@
   }, { passive: true });
 })();
 
+//font scrambler
+(() => {
+  const text = "f.Fish";
+  const logo = document.getElementById("ffish");
+  if (!logo) return;
+
+  const fontClasses = ["f0","f1","f2","f3","f4","f5"];
+
+  // Build spans once
+  logo.innerHTML = "";
+  const spans = [...text].map(ch => {
+    const s = document.createElement("span");
+    s.textContent = ch;
+    logo.appendChild(s);
+    return s;
+  });
+
+  const pick = (arr) => arr[Math.floor(Math.random() * arr.length)];
+
+  function randomize() {
+    spans.forEach((s) => {
+      // remove any existing font class
+      fontClasses.forEach(c => s.classList.remove(c));
+      // add a random one
+      s.classList.add(pick(fontClasses));
+    });
+  }
+
+  randomize();                 
+  setInterval(randomize, 10000); // change randomly every 10s
+
+})();
+
 
 
 // corner-follow.js
