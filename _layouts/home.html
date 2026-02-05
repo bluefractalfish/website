@@ -11,14 +11,6 @@
 <body>
   <header class="head">
     <div class ="head-row">
-      <a class="head-font" id="head" href="{{ '/' | relative_url }}">fractal.fish</a>
-    </div>
-    <script src="{{ '/scripts/scripts.js' | relative_url }}"></script>
-  </header>
-
-  <div class="page">
-    {{ content }}
-    <div class="foot">
         <a class="ffish" href="/" aria-label="f.fish">
           <span class="f5" style="font-size: 1rem;">f</span>
           <span class="f0" style="font-size: 0.2rem;">·</span>
@@ -27,6 +19,13 @@
           <span class="f1">s</span>
           <span class="f2" style="font-weight: 300;">h</span>
         </a>
+    </div>
+    <script src="{{ '/scripts/scripts.js' | relative_url }}"></script>
+  </header>
+
+  <div class="page">
+    {{ content }}
+    <div class="foot">
       </div>
     </div>
 
