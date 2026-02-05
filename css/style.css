@@ -91,7 +91,6 @@ body { background-color: black; margin: 20px; min-height: 100vh;}
   text-decoration: none;
   color: inherit;
   font-size: 8rem;
-  line-height: 1;
 }
 
 a.ffish .f0{ font-family: ui-serif, "Times New Roman", serif !important; }
