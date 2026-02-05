@@ -13,7 +13,9 @@
   --header-h: 10vh;
 
 }
+
 a {text-decoration: none; color: white;}
+
 .link {
   position: relative;
   font-weight: bold;
