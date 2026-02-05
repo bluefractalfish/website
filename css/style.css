@@ -182,8 +182,6 @@ h1 {
   display: grid;
   grid-template-columns: auto;
   align-items: center;
-  justify-center: center;
-  gap: 1rem
   width: 100%;
 }
 
