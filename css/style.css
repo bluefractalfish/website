@@ -14,7 +14,7 @@
 
 }
 
-a {
+.l {
   position: relative;
   font-weight: bold;
   color: var(--white);
@@ -25,32 +25,32 @@ a {
   margin-inline: 1px;
   transition: all 1s ease;
 }
-a:hover{
+.l:hover{
   letter-spacing: .08rem;
   background-color: #eaeaea;
   color: black;
 }
 
-a::before,
-a::after{
+.l::before,
+.l::after{
   content:"";
   position: relative;
 }
 
-a::before{
+.l::before{
   content:"";
   margin-right:1px;
 }
 
-a::after {
+.l::after {
   content:"";
   margin-left:1px;
 }
-a:hover::before{
+.l:hover::before{
   content:"";
   margin-right:1rem;
 }
-a:hover::after{
+.l:hover::after{
   content:"";
   margin-left:1rem;
 }
@@ -71,7 +71,7 @@ body { background-color: black; margin: 20px; min-height: 100vh;}
   cursor: pointer;
   overflow: visible;
 }
-.box a {display: block;}
+.box a {display: flex;}
 .box .content{
   overflow: hidden;
   text-align: left;

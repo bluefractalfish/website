@@ -11,9 +11,9 @@
 <body>
   <header class="head">
     <div class ="head-row">
-      <a href="{{ '/' | append: page.section | append: '/' | relative_url }}">[../]</a>
+      <a href="{{ '/' | append: page.section | append: '/' | relative_url }}" class="l">[../]</a>
       <div style="width=10vw;"></div>
-      <p>_{{page.title}}_</p>
+      <h3>_{{page.title}}_</h3>
     </div>
     <script src="{{ '/scripts/scripts.js' | relative_url }}"></script>
   </header>
