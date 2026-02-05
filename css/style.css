@@ -14,7 +14,46 @@
 
 }
 
-a { text-decoration: none; color: var(--white);}
+a {
+  position: relative;
+  font-weight: bold;
+  color: var(--white);
+  text-decoration: none;
+  display: inline-block;
+  padding: 1px;
+  cursor: pointer;
+  margin-inline: 1px;
+  transition: all 1s ease;
+}
+a:hover{
+  letter-spacing: .08rem;
+  background-color: #eaeaea;
+  color: black;
+}
+
+a::before,
+a::after{
+  content:"";
+  position: relative;
+}
+
+a::before{
+  content:"";
+  margin-right:1px;
+}
+
+a::after {
+  content:"";
+  margin-left:1px;
+}
+a:hover::before{
+  content:"";
+  margin-right:1rem;
+}
+a:hover::after{
+  content:"";
+  margin-left:1rem;
+}
 
 body { background-color: black; margin: 20px; min-height: 100vh;}
 
@@ -212,46 +251,6 @@ h1 {
   to   { transform: translateX(calc(-3em*(var(--fish-t)))); }
 }
 
-l {
-  position: relative;
-  font-weight: bold;
-  color: var(--white);
-  text-decoration: none;
-  display: inline-block;
-  padding: 1px;
-  cursor: pointer;
-  margin-inline: 1px;
-  transition: all 1s ease;
-}
-l:hover{
-  letter-spacing: .08rem;
-  background-color: #eaeaea;
-  color: black;
-}
-
-l::before,
-l::after{
-  content:"";
-  position: relative;
-}
-
-l::before{
-  content:"";
-  margin-right:1px;
-}
-
-l::after {
-  content:"";
-  margin-left:1px;
-}
-l:hover::before{
-  content:"";
-  margin-right:1rem;
-}
-l:hover::after{
-  content:"";
-  margin-left:1rem;
-}
 
 .page{
   margin-top: var(--header-h);
