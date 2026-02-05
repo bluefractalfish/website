@@ -211,6 +211,7 @@ h1 {
   from { transform: translateX(0); }
   to   { transform: translateX(calc(-3em*(var(--fish-t)))); }
 }
+
 l {
   position: relative;
   font-weight: bold;
@@ -220,10 +221,11 @@ l {
   padding: 1px;
   cursor: pointer;
   margin-inline: 1px;
+  transition: all 1s ease;
 }
 l:hover{
-  letter-spacing: .05rem;
-  background-color: #ff5700;
+  letter-spacing: .08rem;
+  background-color: #eaeaea;
   color: black;
 }
 
