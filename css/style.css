@@ -159,6 +159,9 @@ a.ffish .f6{ font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,
 }
 .fishy:hover{
   letter-spacing:0.3ch;
+  font-size: 5rem;
+  background: white;
+  color: black;
 }
 
 .foot {
