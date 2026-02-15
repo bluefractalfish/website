@@ -153,14 +153,14 @@ a.ffish .f6{ font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,
 
 .fishy{
   position: relative;
+  font-weight: 900;
   font-size: 4rem;
-  letter-spacing: -0.36ch;
-  transition: all 1s ease;
+  letter-spacing: -0.35ch;
+  transition: all 1s var(--easing);
 }
 .fishy:hover{
-  transform: translateX(1rem);
+  transform: translateX(50px);
   letter-spacing:0.3ch;
-  border-color: white;
 }
 
 .foot {
