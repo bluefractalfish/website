@@ -183,8 +183,9 @@ h1 {
 }
 
 .head-row{
+  font-size: 50px;
   display: inline-grid;
-  grid-template-columns: auto auto auto;
+  grid-template-columns: auto auto;
   align-items: center;
   width: 100%;
 }
@@ -200,7 +201,7 @@ h1 {
 .head-font {
   display: inline-grid;
   position: relative;
-  font-size: 14pt;
+  font-size: 50pt;
   grid-template-columns: 1ch auto 2ch;
   align-items: center;
   column-gap: 0;
