@@ -109,8 +109,9 @@ body { background-color: black; margin: 20px; min-height: 100vh;}
 .cursor-field {
   display: inline-flex;
   align-items: center;
+  justify-content: center;
   color: var(--white);
-  font-weight: 700;
+  font-weight: 900;
 }
 
 .body,.head,.foot,.page{
@@ -183,7 +184,7 @@ h1 {
 }
 
 .head-row{
-  font-size: 50px;
+  font-size: 72px;
   display: inline-grid;
   grid-template-columns: auto auto auto;
   align-items: center;
