@@ -17,6 +17,7 @@
 a {text-decoration: none; color: white;}
 
 .link {
+  font-size: 20px;
   position: relative;
   font-weight: bold;
   color: var(--white);
@@ -165,6 +166,7 @@ a.ffish .f6{ font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,
   transform: translateY(-2px);
   letter-spacing:0.5ch;
 }
+
 
 .foot {
   position:fixed;
