@@ -183,8 +183,8 @@ h1 {
 }
 
 .head-row{
-  display: grid;
-  grid-template-columns: auto;
+  display: inline-grid;
+  grid-template-columns: auto auto auto;
   align-items: center;
   width: 100%;
 }
