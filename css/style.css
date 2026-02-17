@@ -161,7 +161,7 @@ a.ffish .f6{ font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,
   transition: all 1s var(--easing);
 }
 .fishy:hover{
-  transform: translateX(70px);
+  transform: translateX(20px);
   letter-spacing:0.5ch;
 }
 
