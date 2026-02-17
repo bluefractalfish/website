@@ -265,6 +265,8 @@ h1 {
   margin-bottom: 100px;
 }
 .page a{
+  margin: 3px;
+  padding: 3px;
   text-decoration: none;
   color: black;
   background-color: white;
