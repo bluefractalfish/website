@@ -152,6 +152,8 @@ a.ffish .f6{ font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,
 }
 
 .fishy{
+  margin: 10px;
+  padding: 10px;
   position: relative;
   font-family:'Times New Roman', Times, serif;
   font-style: italic;
@@ -269,9 +271,10 @@ h1 {
   margin: 3px;
   padding: 3px;
   text-decoration: none;
+}
+.page a:hover{
   color: black;
   background-color: white;
-
 }
 
 
