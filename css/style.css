@@ -184,7 +184,6 @@ h1 {
 }
 
 .head-row{
-  font-size: 72px;
   display: inline-grid;
   grid-template-columns: auto auto auto;
   align-items: center;
@@ -267,13 +266,7 @@ h1 {
   margin-bottom: 100px;
 }
 .page a{
-  margin: 0px;
-  padding:  0px 30px ;
   text-decoration: none;
-}
-.page a:hover{
-  color: black;
-  background-color: white;
 }
 
 
