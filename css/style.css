@@ -264,7 +264,12 @@ h1 {
   padding-top: 12px;
   margin-bottom: 100px;
 }
+.page a{
+  text-decoration: none;
+  color: black;
+  background-color: white;
 
+}
 
 
 #posts {
