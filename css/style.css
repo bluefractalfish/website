@@ -152,14 +152,12 @@ a.ffish .f6{ font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,
 }
 
 .fishy{
-  margin: 10px;
-  padding: 10px;
   position: relative;
   font-family:'Times New Roman', Times, serif;
   font-style: italic;
   font-weight: 900;
-  font-size: 4rem;
-  letter-spacing: -0.32ch;
+  font-size: 4.5rem;
+  letter-spacing: -0.28ch;
   transition: all 1s var(--easing);
 }
 .fishy:hover{
@@ -268,8 +266,8 @@ h1 {
   margin-bottom: 100px;
 }
 .page a{
-  margin: 3px;
-  padding: 3px;
+  margin: 0px;
+  padding:  0px 30px ;
   text-decoration: none;
 }
 .page a:hover{
