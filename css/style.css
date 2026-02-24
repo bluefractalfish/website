@@ -10,7 +10,7 @@
   --accent-color: #eaeaea;
   
   --white: #eaeaea;
-  --header-h: 10vh;
+  --header-h: 5vh;
 
 }
 
@@ -169,8 +169,9 @@ a.ffish .f6{ font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,
 
 
 .foot {
+  height: var(--header-h);
   position:fixed;
-  inset:  90vh 0px 0px 0px;
+  inset:  95vh 0px 0px 0px;
   z-index: 1000;
 }
 
@@ -321,6 +322,7 @@ h1 {
 
 .triple-row__num{
   font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono","Courier New", monospace;
+  font-size: 30px;
   opacity: .85;
 }
 
@@ -338,6 +340,6 @@ h1 {
   max-width: 100%;
 }
 
-.triple-row__name:hover{  
-  text-decoration: underline;
+.triple-row:hover{  
+  border-bottom: solid 2px white;
 }
