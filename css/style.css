@@ -311,3 +311,33 @@ h1 {
   overflow-x: auto;
 }
 
+.triple-row{
+  width: 100%;
+  display: grid;
+  grid-template-columns: 3ch 1fr 6ch; /* fixed side widths */
+  align-items: center;
+  padding: 12px 16px;
+}
+
+.triple-row__num{
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono","Courier New", monospace;
+  opacity: .85;
+}
+
+.triple-row__num:first-child{ justify-self: start; }
+.triple-row__num:last-child{ justify-self: end; }
+
+.triple-row__name{
+  justify-self: center;
+  text-decoration: none;
+  font-size: 40px;
+  font-weight: 700;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 100%;
+}
+
+.triple-row__name:hover{  
+  text-decoration: underline;
+}

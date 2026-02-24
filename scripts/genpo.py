@@ -86,7 +86,8 @@ def build_md(title: str, section: str, web_path: str,top_left: str,top_right: st
 def main(section: str, force: bool=False, dry: bool = False, verbose: bool = False):
     if not ASSETS.exists():
         raise SystemExit(f"missing asset directory")
-    images = sorted([p for p in ASSETS.iterdir() if p.is_file() and IMG_RE.match(p.name)])
+    section_dir = Path(ASSETS/section)
+    images = sorted([p for p in section_dir.iterdir() if p.is_file() and IMG_RE.match(p.name)])
     if not images:
         print("nothing to be found here my friend")
         return
@@ -118,7 +119,7 @@ def main(section: str, force: bool=False, dry: bool = False, verbose: bool = Fal
         md_text = build_md(
                 title=title,
                 section=section,
-                web_path=f"/assets/{img_path.name}",
+                web_path=f"/assets/{section}/{img_path.name}",
                 top_left=f"{date_fmt}_{i}",
                 top_right=title,
                 bottom_left=model,
@@ -140,7 +141,7 @@ if __name__ == "__main__":
     import argparse
 
     parser = argparse.ArgumentParser(description="generate Jekyll posts from /assets images")
-    parser.add_argument("--section", required=True, help="one, two, red, blue")
+    parser.add_argument("--section", required=True, help="one, two, red, blue or photo directory")
     parser.add_argument("--force", action="store_true", help="overwrite existing .md files")
     parser.add_argument("--dry", action="store_true", help="print output but do not write files")
     parser.add_argument("--verbose", action="store_true", help="print skip info")
