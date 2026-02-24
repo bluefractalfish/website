@@ -17,7 +17,7 @@
 a {text-decoration: none; color: white;}
 
 .link {
-  font-size: 20px;
+  font-size: 30px;
   position: relative;
   font-weight: bold;
   color: var(--white);
@@ -30,8 +30,7 @@ a {text-decoration: none; color: white;}
 }
 .link:hover{
   letter-spacing: .08rem;
-  background-color: #eaeaea;
-  color: black;
+
 }
 
 .link::before,
@@ -41,20 +40,20 @@ a {text-decoration: none; color: white;}
 }
 
 .link::before{
-  content:"";
+  content:"_";
   margin-right:1px;
 }
 
 .link::after {
-  content:"";
+  content:"_";
   margin-left:1px;
 }
 .link:hover::before{
-  content:"";
+  content:"_";
   margin-right:1rem;
 }
 .link:hover::after{
-  content:"";
+  content:"_";
   margin-left:1rem;
 }
 
