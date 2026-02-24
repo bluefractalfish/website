@@ -11,9 +11,10 @@
 <body>
   <header class="head">
     <div class ="head-row">
-      <span class="cursor-field">x:<span id="cursorX">0</span></span>
+      <div class="cursor-field">
+        <span>x:<span id="cursorX">0</span></span>
       <span></span>
-      <span class="cursor-field">y:<span id="cursorY">0</span></span>
+      <span>y:<span id="cursorY">0</span></span>
       </div>
     <script src="{{ '/scripts/scripts.js' | relative_url }}"></script>
   </header>
@@ -22,7 +23,7 @@
     {{ content }}
     <div class="foot">
       <div class="foot-font">
-        <a href="{{'/' | relative_url}}" style="font-style: italic;" >home</a>
+        <a class="link" href="{{'/' | relative_url}}">&lt;&gt;&lt;</a>
       </div>
     </div>
   </div>
