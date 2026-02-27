@@ -1,20 +1,37 @@
 ---
 layout: default
 ---
-<div class="box">
-  {% if page.image %}
-    <a href="{{ page.image | relative_url }}" target="_blank">
-      <img src="{{ page.image | relative_url }}" alt="{{ page.title }}" class="box-photo" loading="lazy">
-    </a>
-  {% endif %} 
-  {% if content and !="" %}
-    <div class="content">
-      {{ content }}
-    </div>
-  {% endif %}
-    <div class="corner" pos="top-left">{{ page.top_left }}</div>
-    <div class="corner" pos="top-right">{{ page.top_right }}</div>
-    <div class="corner" pos="bottom-left">{{ page.bottom_left }}</div>
-    <div class="corner" pos="bottom-right">{{ page.bottom_right }}</div>  
-</div>
 
+<div class="page">
+  <div class="box">
+
+    {% if page.image %}
+      <a href="{{ page.image | relative_url }}" target="_blank">
+        <img src="{{ page.image | relative_url }}"
+             alt="{{ page.title | escape }}"
+             class="box-photo"
+             loading="lazy">
+      </a>
+    {% endif %}
+
+    {% if content %}
+      <div class="content">
+        {{ content }}
+      </div>
+    {% endif %}
+
+    {% if page.top_left %}
+      <div class="corner" pos="top-left">{{ page.top_left }}</div>
+    {% endif %}
+    {% if page.top_right %}
+      <div class="corner" pos="top-right">{{ page.top_right }}</div>
+    {% endif %}
+    {% if page.bottom_left %}
+      <div class="corner" pos="bottom-left">{{ page.bottom_left }}</div>
+    {% endif %}
+    {% if page.bottom_right %}
+      <div class="corner" pos="bottom-right">{{ page.bottom_right }}</div>
+    {% endif %}
+
+  </div>
+</div>
