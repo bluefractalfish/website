@@ -15,16 +15,16 @@ title: one
           alt="{{ post.title | escape }}"
           loading="lazy">
       </div>
+      {% if post.top_left %}<div class="corner" pos="top-left">{{ post.top_left }}</div>{% endif %}
+      {% if post.top_right %}<div class="corner" pos="top-right">{{ post.top_right }}</div>{% endif %}
+      {% if post.bottom_left %}<div class="corner" pos="bottom-left">{{ post.bottom_left }}</div>{% endif %}
+      {% if post.bottom_right %}<div class="corner" pos="bottom-right">{{ post.bottom_right }}</div>{% endif %}
       {% else %}
         <div class="box-text content">
           <h1>{{ post.title }}</h1>
           <p>{{ post.excerpt | strip_html | truncate: 999}}</p>
         </div>
       {% endif %}
-    {% if post.top_left %}<div class="corner" pos="top-left">{{ post.top_left }}</div>{% endif %}
-    {% if post.top_right %}<div class="corner" pos="top-right">{{ post.top_right }}</div>{% endif %}
-    {% if post.bottom_left %}<div class="corner" pos="bottom-left">{{ post.bottom_left }}</div>{% endif %}
-    {% if post.bottom_right %}<div class="corner" pos="bottom-right">{{ post.bottom_right }}</div>{% endif %}
     </a>
 
   </div>

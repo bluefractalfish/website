@@ -12,15 +12,6 @@ layout: default
              loading="lazy">
       </a>
     </div>
-    {% endif %}
-
-    {% if content %}
-      <div class="box-text content">
-        <h1>{{ post.title }}</h1>
-        {{ content }}
-      </div>
-    {% endif %}
-
     {% if page.top_left %}
       <div class="corner" pos="top-left">{{ page.top_left }}</div>
     {% endif %}
@@ -33,5 +24,12 @@ layout: default
     {% if page.bottom_right %}
       <div class="corner" pos="bottom-right">{{ page.bottom_right }}</div>
     {% endif %}
+    {% endif %}
 
+    {% if content %}
+      <div class="box-text content">
+        <h1>{{ post.title }}</h1>
+        {{ content }}
+      </div>
+    {% endif %}
 </div>
