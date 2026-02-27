@@ -108,6 +108,7 @@ body { background-color: black; margin: 20px; min-height: 100vh;}
 
 
 .cursor-field {
+  font-family: "gohu";
   width: 100%;
   display: grid;
   grid-template-columns: 6ch 1fr 6ch; /* fixed side widths */
@@ -321,7 +322,7 @@ h1 {
   grid-template-columns: 3ch 1fr 6ch; /* fixed side widths */
   align-items: center;
   padding: 12px 16px;
-  transition: all 1s var(--easing);
+  transition: all 400ms var(--easing);
 }
 
 .triple-row__num{
@@ -334,7 +335,6 @@ h1 {
 .triple-row__num:last-child{ justify-self: end; }
 
 .triple-row__name{
-  font-family: "gohu";
   justify-self: center;
   color: white;
   text-decoration: none;
@@ -347,14 +347,9 @@ h1 {
 }
 
 
-.triple-row:hover {  
-  transform: scale(1.1);
-  color: black;
-  background: white;
-}
 
 .triple-row:hover .triple-row__name{  
-  transform: scale(1.15);
+  transform: scale(1.1);
   color: black;
   background: white;
 }
