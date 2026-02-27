@@ -6,6 +6,7 @@ layout: default
     <a href="{{ page.image | relative_url }}" target="_blank">
       <img src="{{ page.image | relative_url }}" alt="{{ page.title }}" class="box-photo" loading="lazy">
     </a>
+  {% endif %} 
   {% if content and !="" %}
     <div class="content">
       {{ content }}
@@ -14,6 +15,6 @@ layout: default
     <div class="corner" pos="top-left">{{ page.top_left }}</div>
     <div class="corner" pos="top-right">{{ page.top_right }}</div>
     <div class="corner" pos="bottom-left">{{ page.bottom_left }}</div>
-    <div class="corner" pos="bottom-right">{{ page.bottom_right }}</div>
+    <div class="corner" pos="bottom-right">{{ page.bottom_right }}</div>  
 </div>
 
