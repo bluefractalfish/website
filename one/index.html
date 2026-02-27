@@ -6,16 +6,16 @@ title: one
 {% assign items = site.posts | where: "section", "one" %}
 
 {% for post in items %}
-  <div class="box">
     <a href="{{ post.url | relative_url }}">
       {% if post.image %}
+      <div class=" box box-photo">
         <img
-          class="box-photo"
           src="{{ post.image | relative_url }}"
           alt="{{ post.title | escape }}"
           loading="lazy">
+      </div>
       {% else %}
-        <div class="content">
+        <div class="box-text content">
           <h1>{{ post.title }}</h1>
           <p>{{ post.excerpt | strip_html | truncate: 120 }}</p>
         </div>

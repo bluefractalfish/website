@@ -84,6 +84,20 @@ body { background-color: black; margin: 20px; min-height: 100vh;}
   height: auto;
 }
 
+.box-text{
+  border: 1px solid var(--white);
+  padding: 1.5rem;
+  max-width: 65ch;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.box-text .content{
+  text-align: left;
+  line-height: 1.5;
+  overflow-wrap: break-word;
+}
+
 .box-photo{
   height: auto;
   width: auto;
