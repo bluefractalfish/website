@@ -27,7 +27,7 @@ a {text-decoration: none; color: white;}
   padding: 3px;
   cursor: pointer;
   margin-inline: 1px;
-  transition: all 300ms ease-in-out();
+  transition: all 400ms var(--easing);
 }
 .link:hover{
   letter-spacing: .08rem;
