@@ -341,8 +341,7 @@ h1 {
   text-overflow: ellipsis;
   max-width: 100%;
 }
-
-.triple-row:hover{  
+.triple-row__name,.triple-row:hover{  
   color: black;
   background: white;
 }
