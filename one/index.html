@@ -2,18 +2,29 @@
 layout: default
 title: one
 ---
+
 {% assign items = site.posts | where: "section", "one" %}
+
 {% for post in items %}
   <div class="box">
-      <div class="content">
-        <h1>{{ post.title }}</h1>
-        <p>{{ post.excerpt | strip_html | truncate: 120 }}</p>
-      </div>
-    {% endif %}
+    <a href="{{ post.url | relative_url }}">
+      {% if post.image %}
+        <img
+          class="box-photo"
+          src="{{ post.image | relative_url }}"
+          alt="{{ post.title | escape }}"
+          loading="lazy">
+      {% else %}
+        <div class="content">
+          <h1>{{ post.title }}</h1>
+          <p>{{ post.excerpt | strip_html | truncate: 120 }}</p>
+        </div>
+      {% endif %}
+    </a>
 
-    <div class="corner" pos="top-left">{{ post.top_left }}</div>
-    <div class="corner" pos="top-right">{{ post.top_right }}</div>
-    <div class="corner" pos="bottom-left">{{ post.bottom_left }}</div>
-    <div class="corner" pos="bottom-right">{{ post.bottom_right }}</div>
+    {% if post.top_left %}<div class="corner" pos="top-left">{{ post.top_left }}</div>{% endif %}
+    {% if post.top_right %}<div class="corner" pos="top-right">{{ post.top_right }}</div>{% endif %}
+    {% if post.bottom_left %}<div class="corner" pos="bottom-left">{{ post.bottom_left }}</div>{% endif %}
+    {% if post.bottom_right %}<div class="corner" pos="bottom-right">{{ post.bottom_right }}</div>{% endif %}
   </div>
 {% endfor %}
