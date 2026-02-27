@@ -6,6 +6,7 @@ title: one
 {% assign items = site.posts | where: "section", "one" %}
 
 {% for post in items %}
+
     <a href="{{ post.url | relative_url }}">
       {% if post.image %}
       <div class=" box box-photo">
@@ -20,11 +21,11 @@ title: one
           <p>{{ post.excerpt | strip_html | truncate: 999}}</p>
         </div>
       {% endif %}
-    </a>
-
     {% if post.top_left %}<div class="corner" pos="top-left">{{ post.top_left }}</div>{% endif %}
     {% if post.top_right %}<div class="corner" pos="top-right">{{ post.top_right }}</div>{% endif %}
     {% if post.bottom_left %}<div class="corner" pos="bottom-left">{{ post.bottom_left }}</div>{% endif %}
     {% if post.bottom_right %}<div class="corner" pos="bottom-right">{{ post.bottom_right }}</div>{% endif %}
+    </a>
+
   </div>
 {% endfor %}

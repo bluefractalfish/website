@@ -64,7 +64,7 @@ body { background-color: black; margin: 20px; min-height: 100vh;}
   position: relative;
   width: auto;
   height:auto;
-  border:1px solid var(--white);
+  border:2px solid var(--white);
   padding: 2px;
   margin: 25px;
   margin-inline:auto;
@@ -85,7 +85,8 @@ body { background-color: black; margin: 20px; min-height: 100vh;}
 }
 
 .box-text{
-  border: 1px solid var(--white);
+  font-family: "gohu";
+  border: 2px solid var(--white);
   padding: 1.5rem;
   max-width: 65ch;
   width: 100%;
