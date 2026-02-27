@@ -345,8 +345,15 @@ h1 {
   max-width: 100%;
 }
 
+
+.triple-row:hover {  
+  transform: scale(1.1);
+  color: black;
+  background: white;
+}
+
 .triple-row:hover .triple-row__name{  
-  transform: scale(1.06);
+  transform: scale(1.15);
   color: black;
   background: white;
 }
