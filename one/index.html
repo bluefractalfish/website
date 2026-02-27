@@ -17,7 +17,7 @@ title: one
       {% else %}
         <div class="box-text content">
           <h1>{{ post.title }}</h1>
-          <p>{{ post.excerpt | strip_html | truncate: 120 }}</p>
+          <p>{{ post.excerpt | strip_html | truncate: 999}}</p>
         </div>
       {% endif %}
     </a>
