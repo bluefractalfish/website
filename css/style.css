@@ -108,7 +108,6 @@ body { background-color: black; margin: 20px; min-height: 100vh;}
 
 
 .cursor-field {
-  font-family: "gohu";
   width: 100%;
   display: grid;
   grid-template-columns: 6ch 1fr 6ch; /* fixed side widths */
