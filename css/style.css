@@ -41,20 +41,20 @@ a {text-decoration: none; color: white;}
 }
 
 .link::before{
-  content:"[";
+  content:"";
   margin-right:1px;
 }
 
 .link::after {
-  content:"]";
+  content:"";
   margin-left:1px;
 }
 .link:hover::before{
-  content:"[";
+  content:"";
   margin-right:1rem;
 }
 .link:hover::after{
-  content:"]";
+  content:"";
   margin-left:1rem;
 }
 
