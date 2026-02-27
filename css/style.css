@@ -76,6 +76,7 @@ body { background-color: black; margin: 20px; min-height: 100vh;}
 }
 .box a {display: flex;}
 .box .content{
+  font-family: "gohu";
   overflow: hidden;
   width: 70vw;
   text-align: left;
