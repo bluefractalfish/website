@@ -27,7 +27,7 @@ a {text-decoration: none; color: white;}
   padding: 3px;
   cursor: pointer;
   margin-inline: 1px;
-  transition: all 400ms var(--easing);
+  transition: all 800ms var(--easing);
 }
 .link:hover{
   letter-spacing: .08rem;
@@ -41,20 +41,20 @@ a {text-decoration: none; color: white;}
 }
 
 .link::before{
-  content:"_";
+  content:"[";
   margin-right:1px;
 }
 
 .link::after {
-  content:"_";
+  content:"]";
   margin-left:1px;
 }
 .link:hover::before{
-  content:"_";
+  content:"[";
   margin-right:1rem;
 }
 .link:hover::after{
-  content:"_";
+  content:"]";
   margin-left:1rem;
 }
 
