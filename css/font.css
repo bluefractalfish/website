@@ -14,4 +14,12 @@
   font-weight: bold; 
   font-style:normal;
 }
+/* agave bold*/
+
+@font-face{
+  font-family:"gohu";
+  src: url('gohu/gohu-reg.ttf') format('truetype');
+  font-weight: normal; 
+  font-style:normal;
+}
 
