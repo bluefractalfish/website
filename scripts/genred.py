@@ -1,6 +1,7 @@
 import os
 import re
 import json
+import shutil
 from pathlib import Path
 from datetime import datetime
 from slugify import slugify
@@ -11,6 +12,9 @@ from PIL import Image
 ROOT = Path(__file__).resolve().parents[1] # assume scripts/ level down
 ASSETS = ROOT/ "assets"
 POSTS = ROOT/ "_posts"
+RED = ROOT/ "red"
+STAGE = ROOT/ "staging"
+TEMPLATE_PATH = Path("scripts/_template")
 IMG_RE = re.compile(r".*\.(jpe?g)$", re.IGNORECASE)
 
 def pad2(n:int) -> str:
@@ -82,11 +86,26 @@ def build_md(title: str, section: str, web_path: str,top_left: str,top_right: st
             "",
         ]
     return "\n".join(lines)
+def build_red_dirs(section: str):
+    section_indx = Path("red") / section
+    section_ast = Path(ASSETS) / section
+    section_ast.mkdir(exist_ok=True)
+    section_indx.mkdir(exist_ok=True)
+    index_file = section_indx / "index.html"
+    temp = TEMPLATE_PATH.read_text()
+    output = temp.replace("{*???*}",section)
+    index_file.write_text(output)
+    print(f"created {index_file}")
+
 
 def main(section: str, force: bool=False, dry: bool = False, verbose: bool = False):
+    
+    build_red_dirs(section)
     if not ASSETS.exists():
         raise SystemExit(f"missing asset directory")
     section_dir = Path(ASSETS/section)
+    for item in STAGE.iterdir():
+        shutil.move(str(item),section_dir/item.name)
     images = sorted([p for p in section_dir.iterdir() if p.is_file() and IMG_RE.match(p.name)])
     if not images:
         print("nothing to be found here my friend")
