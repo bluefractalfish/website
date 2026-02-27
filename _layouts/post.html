@@ -3,19 +3,19 @@ layout: default
 ---
 
 <div class="page">
-  <div class="box">
-
+    
     {% if page.image %}
+    <div class="box box-photo">
       <a href="{{ page.image | relative_url }}" target="_blank">
         <img src="{{ page.image | relative_url }}"
              alt="{{ page.title | escape }}"
-             class="box-photo"
              loading="lazy">
       </a>
+    </div>
     {% endif %}
 
     {% if content %}
-      <div class="content">
+      <div class="box-text content">
         {{ content }}
       </div>
     {% endif %}
@@ -33,5 +33,4 @@ layout: default
       <div class="corner" pos="bottom-right">{{ page.bottom_right }}</div>
     {% endif %}
 
-  </div>
 </div>
