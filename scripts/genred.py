@@ -87,7 +87,7 @@ def build_md(title: str, section: str, web_path: str,top_left: str,top_right: st
         ]
     return "\n".join(lines)
 def build_red_dirs(section: str):
-    section_indx = Path("red") / section
+    section_indx = Path(RED) / section
     section_ast = Path(ASSETS) / section
     section_ast.mkdir(exist_ok=True)
     section_indx.mkdir(exist_ok=True)
