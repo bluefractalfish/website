@@ -85,15 +85,15 @@ body { background-color: black; margin: 20px; min-height: 100vh;}
 }
 
 .box-text{
-  font-family: "gohu";
   border: 2px solid var(--white);
   padding: 1.5rem;
-  max-width: 65ch;
+  max-width: 70vw;
   width: 100%;
   box-sizing: border-box;
 }
 
 .box-text .content{
+  font-family: "gohu";
   text-align: left;
   line-height: 1.5;
   overflow-wrap: break-word;
