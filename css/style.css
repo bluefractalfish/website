@@ -133,13 +133,21 @@ body { background-color: black; margin: 20px; min-height: 100vh;}
   font-weight: 900;
 }
 
-.body,.head,.foot,.page{
+.body,.page{
+  font-family: "agave";
+  display:grid;
+  place-items:center;
+  color: var(--white);
+  background-color: black;
+}
+.foot, .head{
   font-family: "agave";
   display:grid;
   place-items:center;
   color: var(--white);
   filter: blur(10px);
   background-color: rgba(255,255,255,0.4);
+
 }
 
 :where(.head-font,.foot-font,.box,l,.path,.corner){
