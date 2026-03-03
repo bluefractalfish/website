@@ -55,7 +55,7 @@ a{ color:inherit; text-decoration:none; }
 
 .cursor-field{
   font-weight:900;
-  font-size: 7vw;
+  font-size: 6vw;
 }
 .cursor-left{ justify-self:start; }
 .cursor-right{ justify-self:end; }
@@ -77,19 +77,19 @@ a{ color:inherit; text-decoration:none; }
   width: 100%;
   display: grid;
   place-items: center;
-  margin: 14px 0;          /* spacing between options */
+  margin: 0;          /* spacing between options */
 }
 
 .fishy a{
   font-size: 10vw;
   font-weight: 900;
-  padding: 6px 10px;
+  padding: 0px 10px;
   transition: background-color 200ms ease, color 200ms ease, transform 200ms ease;
 }
 
 .fishy a:hover{
   background-color: var(--fg);
-  color: #000;
+  color: var(--bg);
   transform: scale(1.06);
 }
 
@@ -98,14 +98,15 @@ a{ color:inherit; text-decoration:none; }
   font-size:20px;
   font-weight:bold;
   display:inline-block;
-  padding:3px;
-  transition: all var(--t-med) var(--easing);
+  margin-left: auto;
+  margin-right: auto;
+  transition: all 200ms var(--easing);
 }
-.link::before{ content:"["; margin-right:1px; }
-.link::after{ content:"]"; margin-left:1px; }
-.link:hover{ letter-spacing:.08rem; }
-.link:hover::before{ margin-right:1rem; }
-.link:hover::after{ margin-left:1rem; }
+
+.link:hover{
+  background-color: var(--fg);
+  color: var(--bg);
+}
 
 /* ===== Page spacing ===== */
 
@@ -125,9 +126,8 @@ a{ color:inherit; text-decoration:none; }
   border:2px solid var(--fg);
   margin-left: auto;
   margin-right: auto;
-  margin-top: 25px;
-  margin-bottom: 25px;
-  padding: 1px;
+  margin-top: 30px;
+  margin-bottom: 30px;
   width: fit-content;
   max-width: min(70vw, 100%);
   overflow: visible;
@@ -135,11 +135,12 @@ a{ color:inherit; text-decoration:none; }
 
 .box--text{
   width: min(200ch, 100%);
-  padding: 1.25rem;
+  padding: 1rem;
 }
 
 .box--text .content{
   text-align:left;
+  font-weight: 100;
   line-height:1.6;
   overflow-wrap:anywhere;
   border: 2px solid var(--fg);
