@@ -10,7 +10,7 @@
 }
 
 html, body {
-  font-family:  "Recursive", system-ui, -apple-system, "Segoe UI", Arial, sans-serif !important;
+  font-family:  "cascadia", system-ui, -apple-system, "Segoe UI", Arial, sans-serif !important;
   height: 100%;
 }
 
@@ -54,9 +54,9 @@ a{ color:inherit; text-decoration:none; }
 }
 
 .cursor-field{
+  font-family: "agave";
   font-weight:900;
   font-size: 7vw;
-  font-family: "agave";
 }
 .cursor-left{ justify-self:start; }
 .cursor-right{ justify-self:end; }

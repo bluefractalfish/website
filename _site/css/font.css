@@ -23,3 +23,8 @@
   font-style:normal;
 }
 
+@font-face{
+  font-family:"cascadia";
+  src: url('font/CascadiaMono-VariableFont_wght.ttf') format('truetype');
+  font-weight: 100 900; 
+}
