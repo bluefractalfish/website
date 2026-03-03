@@ -15,7 +15,7 @@
     <div class="head-row">
       <span class="cursor-field ">
         <span id="cursorY">0000</span>
-      <span><a onclick="window.history.back()">..&sol;</a></span>
+      <span><a class="link" onclick="window.history.back()">..&sol;</a></span>
         <span id="cursorX">0000</span>
     </div>
   </header>
@@ -23,11 +23,7 @@
   <div class="page">
     {{ content }}
 
-    <div class="foot">
-      <div class="foot-font">
-        <a class="link" href="{{ '/' | relative_url }}">&lt;&gt;&lt;</a>
-      </div>
-    </div>
+    <div class="foot"></div>
   </div>
 </body>
 </html>

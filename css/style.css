@@ -8,20 +8,24 @@
 
 
   --accent-color: #eaeaea;
-  
+  --foreground: #eaeaea;
+  --background: #000000;
+  --red: ;
+  --blue: ;
+  --black: #000000;
   --white: #eaeaea;
   --header-h: 5vh;
 
 }
 
-a {text-decoration: none; color: white;}
+a {text-decoration: none; color: var(--foreground);}
 
 .link {
   font-family: "gohu";
   font-size: 20px;
   position: relative;
   font-weight: bold;
-  color: var(--white);
+  color: var(--foreground);
   text-decoration: none;
   display: inline-block;
   padding: 3px;
@@ -34,31 +38,7 @@ a {text-decoration: none; color: white;}
 
 }
 
-.link::before,
-.link::after{
-  content:"";
-  position: relative;
-}
-
-.link::before{
-  content:"";
-  margin-right:1px;
-}
-
-.link::after {
-  content:"";
-  margin-left:1px;
-}
-.link:hover::before{
-  content:"";
-  margin-right:1rem;
-}
-.link:hover::after{
-  content:"";
-  margin-left:1rem;
-}
-
-body { background-color: black; margin: 20px; min-height: 100vh;}
+body { background-color: var(--background); margin: 20px; min-height: 100vh;}
 
 .box{
   position: relative;
@@ -138,13 +118,13 @@ body { background-color: black; margin: 20px; min-height: 100vh;}
   display:grid;
   place-items:center;
   color: var(--white);
-  background-color: black;
+  background-color: var(--background);
 }
 
 :where(.head-font,.foot-font,.box,l,.path,.corner){
   transition: all var(--t-med) var(--easing);
   color: var(--white);
-  background-color: black;
+  background-color: var(--background);
 }
 
 .ffish{
@@ -258,15 +238,15 @@ h1 {
 }
 .head-font.is-fish{
   color: transparent;
-  background-color: black;
+  background-color: var(--background);
 }
 .head-font.is-fish::before{
     animation: left-bracket-in 1s cubic-bezier(.2,.9,.3,1) forwards;
-    color: var(--white);
+    color: var(--foreground);
 }
 .head-font.is-fish::after{
     animation: right-bracket-in 1s cubic-bezier(.2,.9,.3,1) forwards;
-    color: var(--white);
+    color: var(--foreground);
 }
 
 @keyframes left-bracket-in {
