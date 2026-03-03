@@ -20,7 +20,7 @@ title: one
       {% if post.bottom_left %}<div class="corner" pos="bottom-left">{{ post.bottom_left }}</div>{% endif %}
       {% if post.bottom_right %}<div class="corner" pos="bottom-right">{{ post.bottom_right }}</div>{% endif %}
       {% else %}
-        <div class="box-text content">
+        <div class="box box--text">
           <h1>{{ post.title }}</h1>
           <p>{{ post.excerpt | strip_html | truncate: 999}}</p>
         </div>

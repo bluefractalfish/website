@@ -13,17 +13,18 @@
 <body>
   <header class="head">
     <div class="head-row">
-      <span class="cursor-field ">
-        <span id="cursorY">0000</span>
-      <span><a class="link" onclick="window.history.back()">..&sol;</a></span>
-        <span id="cursorX">0000</span>
+      <span class="cursor-field cursor-left"><span id="cursorY">0000</span></span>
+      <span></span>
+      <span class="cursor-field cursor-right"><span id="cursorX">0000</span></span>
     </div>
   </header>
 
-  <div class="page">
+  <main class="page">
     {{ content }}
+  </main>
 
-    <div class="foot"></div>
-  </div>
+  <footer class="foot">
+    <a class="link" href="{{ '/' | relative_url }}">~</a>
+  </footer>
 </body>
 </html>

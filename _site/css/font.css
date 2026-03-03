@@ -1,0 +1,32 @@
+
+/* agave regular */
+@font-face{
+  font-family:"agave";
+  src:url('agave_nerd/AgaveNerdFont-Regular.woff') format('woff');
+  font-weight: normal;
+  font-style:normal;
+}
+
+/* agave bold*/
+@font-face{
+  font-family:"agave";
+  src: url('agave_nerd/AgaveNerdFont-Bold.woff') format('woff');
+  font-weight: bold; 
+  font-style:normal;
+}
+/* agave bold*/
+
+@font-face{
+  font-family:"gohu";
+  src: url('gohu/gohu-reg.ttf') format('truetype');
+  font-weight: normal; 
+  font-style:normal;
+}
+
+/* roboto flex */ 
+@font-face{
+  font-family: "roboto-flex";
+  src: url('font/robotoflex.ttf') format('truetype');
+  font-weight: 100 900;
+}
+
