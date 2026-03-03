@@ -197,7 +197,7 @@ a{ color:inherit; text-decoration:none; }
 .triple-row__name{
   justify-self:center;
   font-size:10vw;
-  font-weight:900;
+  font-weight:300;
   white-space:nowrap;
   overflow:hidden;
   text-overflow:ellipsis;
@@ -205,7 +205,7 @@ a{ color:inherit; text-decoration:none; }
 }
 
 .triple-row:hover .triple-row__name{
-  transform: scale(1.1);
+  font-weight: 300;
   color:var(--bg);
   background:var(--fg);
 }
