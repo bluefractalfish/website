@@ -7,6 +7,8 @@
   --red: #B53324;
   --dgreen: #212C1B;
   --orange: #F15B22;
+  --yellow: #FFC64F;
+  --dblue: #023047;
   --t-med:.8s;
   --easing:cubic-bezier(.2,.3,.5,1);
 }
