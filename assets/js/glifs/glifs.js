@@ -1,29 +1,32 @@
-let cols = 3;
+let cols = 4;
 let rows = 2;
 let grid = [];
 
-let stepsPerCell = 1;
+let stepsPerCell = 2;
 let padding = 0;
 let canvas;
 
 function setup() {
-  canvas = createCanvas(windowWidth, windowHeight);
-  canvas.position(0,0);
-  canvas.style('display','block');
+  const holder = document.getElementById("p5-container");
+  const w = holder?.clientWidth || window.innerWidth;
+  const h = holder?.clientHeight || window.innerHeight;
+
+  canvas = createCanvas(w,h);
+  canvas.parent("p5-container");
   // Use hue-based colors
   colorMode(HSB, 360, 100, 100, 100);
 
   textAlign(CENTER, CENTER);
-  textSize(100);
-  strokeWeight(130);
+  textSize(10);
+  strokeWeight(100);
 
   regenerate();
   noLoop();
 }
 
 function draw() {
-  background(18, 17, 17);
 
+  clear();
   const cellW = (width - padding * 2) / cols;
   const cellH = (height - padding * 2) / rows;
 
@@ -47,6 +50,7 @@ function drawRouteFrom(i, j, cellW, cellH) {
   for (let s = 0; s < stepsPerCell; s++) {
 
     const dir = digitToDir(grid[ci][cj]);
+    text(grid);
 
     const ni = constrain(ci + dir.di, 0, cols - 1);
     const nj = constrain(cj + dir.dj, 0, rows - 1);
@@ -57,7 +61,7 @@ function drawRouteFrom(i, j, cellW, cellH) {
     const b = cellCenter(ni, nj, cellW, cellH);
 
     // colorful stroke
-    stroke(hue, 80, 90, 80);
+    stroke(hue, 100, 100, 70);
 
     line(a.x, a.y, b.x, b.y);
 
@@ -65,7 +69,7 @@ function drawRouteFrom(i, j, cellW, cellH) {
     cj = nj;
 
     // shift hue slightly each step
-    hue = (hue + 50) % 360;
+    hue = (hue + 5) % 360;
   }
 }
 
@@ -109,7 +113,8 @@ function keyPressed() {
 }
 
 function windowResized() {
-  resizeCanvas(windowWidth, windowHeight);
-  canvas.position(0,0);
+  const holder = document.getElementById("p5-container");
+  if(!holder) return;
+  resizeCanvas(holder.clientWidth, holder.clientHeight);
   redraw();
 }

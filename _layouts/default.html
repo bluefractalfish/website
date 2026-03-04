@@ -22,6 +22,22 @@
   <link rel="stylesheet" href="{{ '/css/font.css' | relative_url }}">
   <link rel="stylesheet" href="{{ '/css/style.css' | relative_url }}">
   <script src="{{ '/scripts/scripts.js' | relative_url }}" defer></script>
+  {% if page.p5 %}
+    <!-- p5.js -->
+    <script src="https://cdn.jsdelivr.net/npm/p5@1.9.4/lib/p5.min.js"></script>
+
+    {% if page.p5_sound %}
+      <script src="https://cdn.jsdelivr.net/npm/p5@1.9.4/lib/addons/p5.sound.min.js"></script>
+    {% endif %}
+
+    {%- comment -%}
+      Load the sketch file for this page.
+      Usage: p5_sketch: /assets/sketches/mySketch.js
+    {%- endcomment -%}
+    {% if page.p5_sketch %}
+      <script src="{{ page.p5_sketch | relative_url }}" defer></script>
+    {% endif %}
+  {% endif %}
 </head>
 
 <body>
@@ -35,6 +51,9 @@
 
   <main class="page">
     <div style="height: 5vh;"></div>
+    {% if page.p5 %}
+      <div id="p5-container" class="p5-container"></div>
+    {% endif %}
     {{ content }}
   </main>
 
