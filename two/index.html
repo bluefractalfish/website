@@ -1,18 +1,14 @@
----
-layout: default
-title: two
----
-<h2>this fish is under construction.</h2>
-{% assign items = site.posts | where: "section", "two" %}
-{% for post in items %}
-  <div class="box" role="button" aria-expanded="false" tabindex="0">
-    <a href="{{ post.url | relative_url }}">
-      <img src="{{ post.image | relative_url }}" alt="{{ post.title | escape }}" class="box-photo" loading="lazy">
-    </a>
-    <div class="corner" pos="top-left">{{ post.top_left }}</div>
-    <div class="corner" pos="top-right">{{ post.top_right }}</div>
-    <div class="corner" pos="bottom-left">{{ post.bottom_left }}</div>
-    <div class="corner" pos="bottom-right">{{ post.bottom_right }}</div>
-  </div>
-{% endfor %}
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>blue</title>
+  <script src="https://cdn.jsdelivr.net/npm/p5@1.9.4/lib/p5.min.js"></script>
+</head>
+<body>
+
+<script src="sketch.js"></script>
+
+</body>
+</html>
