@@ -4,10 +4,12 @@ let grid = [];
 
 let stepsPerCell = 1;
 let padding = 0;
+let canvas;
 
 function setup() {
-  createCanvas(windowWidth, windowHeight);
-
+  canvas = createCanvas(windowWidth, windowHeight);
+  canvas.position(0,0);
+  canvas.style('display','block');
   // Use hue-based colors
   colorMode(HSB, 360, 100, 100, 100);
 
@@ -20,7 +22,7 @@ function setup() {
 }
 
 function draw() {
-  background(0, 0, 0);
+  background(18, 17, 17);
 
   const cellW = (width - padding * 2) / cols;
   const cellH = (height - padding * 2) / rows;
@@ -108,5 +110,6 @@ function keyPressed() {
 
 function windowResized() {
   resizeCanvas(windowWidth, windowHeight);
+  canvas.position(0,0);
   redraw();
 }
