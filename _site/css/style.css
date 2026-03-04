@@ -250,5 +250,6 @@ a{ color:inherit; text-decoration:none; }
 .triple-row:hover .triple-row__name{
   font-weight: 300;
   color:var(--bg);
+  letter-spacing: 0.2em;
   background:var(--fg);
 }
