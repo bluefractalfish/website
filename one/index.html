@@ -3,6 +3,8 @@ layout: default
 title: one
 ---
 
+<body style="--bg: var(--yellow); --fg: var(--dblue);">
+
 {% assign items = site.posts | where: "section", "one" %}
 
 {% for post in items %}
@@ -29,3 +31,4 @@ title: one
 
   </div>
 {% endfor %}
+</body>
