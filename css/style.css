@@ -91,12 +91,20 @@ a{ color:inherit; text-decoration:none; }
   align-items:center;
 }
 
-.cursor-field{
+.footer-field,.cursor-field{
+  font-family: "agave";
   font-weight:900;
-  font-size: 6vw;
+  font-size: 3vw;
 }
 .cursor-left{ justify-self:start; }
 .cursor-right{ justify-self:end; }
+
+.footer-left{justify-self:start;}
+.footer-right{justify-self:end;}
+
+.footer-left:hover{
+  text-decoration: underline;
+}
 
 .foot{
   position:fixed;
@@ -106,9 +114,17 @@ a{ color:inherit; text-decoration:none; }
   height:var(--header-h);
   display:grid;
   place-items:center;
-  background:var(--bg);
+  background:none;
   z-index:1000;
 }
+.foot-row{
+  line-height: 0;
+  width: 100%;
+  display: grid;
+  grid-template-columns: 6ch 1fr 6ch;
+  align-items: center;
+}
+
 
 /* HOME LINKS (index.html uses .fishy) */
 .fishy{
