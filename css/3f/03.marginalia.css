@@ -1,0 +1,105 @@
+/* page annotations */
+
+.marginalia {
+  pointer-events: none;
+}
+
+.marginalia--fixed {
+  position: fixed;
+  inset: 0;
+  z-index: 20;
+}
+
+.marginalia--document {
+  position: absolute;
+  inset: 0;
+  z-index: 5;
+}
+
+.marginalia_panel {
+  position: absolute;
+  left: 0;
+  right: 0;
+}
+
+/* fixed page marks */
+.mark {
+  position: absolute;
+  font-size: var(--mark-size);
+  font-family: var(--font-mark);
+  pointer-events: none;
+}
+
+.mark[corner="tl"] {
+  top: var(--mark-offset);
+  left: var(--mark-offset);
+}
+
+.mark[corner="tr"] {
+  top: var(--mark-offset);
+  right: var(--mark-offset);
+}
+
+.mark[corner="bl"] {
+  bottom: var(--mark-offset);
+  left: var(--mark-offset);
+}
+
+.mark[corner="br"] {
+  bottom: var(--mark-offset);
+  right: var(--mark-offset);
+}
+
+.crosshair {
+  position: absolute;
+  width: var(--crosshair-size);
+  height: var(--crosshair-size);
+  pointer-events: none;
+  z-index: 1;
+  opacity: var(--crosshair-opacity);
+  top: var(--y);
+  left: var(--x);
+
+  transform: translate(
+    calc(-50% + var(--dx, 0px)),
+    calc(-50% + var(--dy, 0px))
+  );
+}
+
+.crosshair::before,
+.crosshair::after {
+  content: "";
+  position: absolute;
+  background: var(--fg);
+}
+
+.crosshair::before {
+  top: 50%;
+  left: 0;
+  width: 100%;
+  height: var(--crosshair-weight);
+  transform: translateY(-50%);
+}
+
+.crosshair::after {
+  top: 0;
+  left: 50%;
+  width: var(--crosshair-weight);
+  height: 100%;
+  transform: translateX(-50%);
+}
+
+.crosshair--tr { 
+            top:calc(-1*var(--frame-margin));
+            right: calc(var(--crosshair-size)*var(--minor-factor)*-1.5); 
+            width: calc(var(--crosshair-size) * var(--minor-factor));
+            height: calc(var(--crosshair-size)*var(--minor-factor));
+            opacity: 1;
+        }
+
+.crosshair--minor {
+  opacity: var(--crosshair-minor-opacity);
+  --crosshair-weight: 1px; 
+  width: calc(var(--crosshair-size) * var(--minor-factor));
+  height: calc(var(--crosshair-size) * var(--minor-factor));
+}

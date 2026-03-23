@@ -1,0 +1,39 @@
+.frame { 
+    border: solid 1px red;
+    position: relative;
+    border: var(--frame-border);
+    margin: var(--frame-margin);
+    margin-bottom: calc(2*var(--frame-margin));
+}
+
+.frame__margin{ 
+    padding: var(--frame-padding);
+}
+
+
+.frame__body {
+    border: var(--frame-border-w) solid var(--fg);
+    padding: 0px;
+    position: relative;
+    z-index: 1;
+}
+
+.frame__media { 
+    padding: 0;
+}
+
+.frame__text { 
+    margin: var(--frame-text-pad);
+    text-align: justify;
+    hyphens: auto;
+}
+
+.frame__plate { 
+    padding: 0;
+}
+
+.frame__note { 
+    background: transparent;
+    border-style: dashed; 
+}
+

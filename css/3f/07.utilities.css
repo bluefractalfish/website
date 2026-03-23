@@ -1,0 +1,32 @@
+.__hide { 
+    display: none !important;
+} 
+
+.__nowrap { 
+    white-space: nowrap;
+}
+
+.__full_width { 
+    width: 100%;
+}
+
+.__center_text { 
+    text-align: center;
+}
+
+.__left_text {
+    text-align: left;
+}
+
+.__right_text {
+    text-align: right;
+}
+
+.__large_text{
+    font-size: var(--large-text-size);
+    transition: all 1s var(--ease);
+}
+
+.__large_text:hover{
+    letter-spacing: 0.1em; 
+}

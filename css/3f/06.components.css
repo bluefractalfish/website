@@ -1,0 +1,38 @@
+.___row { 
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    gap: var(--space-2);
+    padding: var(--space-2) 0;
+}
+
+._row { 
+    text-align: center;
+    padding:0;
+    margin: 0;
+}
+
+.post__card { 
+    display: block;
+}
+
+.link { 
+    padding: 0;
+    text-align: center;
+    transition: var(--t-med) var(--ease);
+}
+
+.link:hover { 
+    background: var(--fg);
+    color: var(--bg);
+}
+
+.wordmark { 
+    font-size: clamp(2rem, 6vw, 5rem);
+    text-align: center;
+    transition: var(--t-med) var(--ease);
+}
+
+.wordmark:hover { 
+    background: var(--fg);
+    color: var(--bg);
+}

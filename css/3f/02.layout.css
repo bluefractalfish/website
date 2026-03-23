@@ -1,0 +1,37 @@
+/* physical page area */
+.page { 
+    margin: var(--margin);
+}
+
+.page__margin { 
+
+    padding: var(--margin);
+    position: relative;
+}
+
+.page__content { 
+    padding: var(--margin-inner);
+}
+
+/* text area */
+.text-block { 
+    width: min(100% - 2rem, var(--text-measure));
+    margin-inline: auto;
+    padding-block: 5vh;
+}
+
+/* stack of equally spaced frames */
+.stack > * + * {
+margin-top: 2rem;
+}
+
+.grid{
+    display: grid;
+    gap: var(--space-3);
+}
+
+.center {
+    display: grid;
+    place-items: center;
+}
+
