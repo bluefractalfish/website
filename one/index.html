@@ -1,32 +1,45 @@
 ---
 layout: default
 title: one
+
+header: false
+footer: false
 ---
 
+<div class="stack">
 
-{% assign items = site.posts | where: "section", "one" %}
+{% for photo in site.pixels %}
 
-{% for post in items %}
-
-    <a href="{{ post.url | relative_url }}">
-      {% if post.image %}
-      <div class=" box box-photo">
-        <img
-          src="{{ post.image | relative_url }}"
-          alt="{{ post.title | escape }}"
-          loading="lazy">
-      </div>
-      {% if post.top_left %}<div class="corner" pos="top-left">{{ post.top_left }}</div>{% endif %}
-      {% if post.top_right %}<div class="corner" pos="top-right">{{ post.top_right }}</div>{% endif %}
-      {% if post.bottom_left %}<div class="corner" pos="bottom-left">{{ post.bottom_left }}</div>{% endif %}
-      {% if post.bottom_right %}<div class="corner" pos="bottom-right">{{ post.bottom_right }}</div>{% endif %}
-      {% else %}
-        <div class="box box--text">
-          <h1>{{ post.title }}</h1>
-          <p>{{ post.excerpt | strip_html | truncate: 999}}</p>
+    <a href="{{ photo.url | relative_url }}">
+      <div class="frame font__meta">
+          <div class="frame__margin">
+            <div class="frame__body">
+                <div class="frame__media">
+                    <img
+                      src="{{ post.image | relative_url }}"
+                      alt="{{ post.title | escape }}"
+                      loading="lazy">
+                </div>
+            </div>
         </div>
-      {% endif %}
+      </div>
     </a>
-
-  </div>
 {% endfor %}
+{% for essay in site.text %}
+    <a href="{{ essay.url | relative_url }}">
+        <div class="frame">
+              <div class="crosshair crosshair--tr"></div>
+
+            <div class="frame__margin">
+                <div class="frame__body">
+                    <div class="frame__text">
+                      <h1>{{ essay.title }}</h1>
+                      <p class="type__mark">{{ essay.content}}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </a>
+{% endfor %}
+</div>
+</div>

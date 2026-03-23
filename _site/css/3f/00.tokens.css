@@ -1,0 +1,62 @@
+
+:root {
+  --bg: #131212;
+  --fg: #eaeaea;
+  --accent: #eaeaea;
+  --hover-color: #eaeaea;
+
+  --header-h: 5vh;
+
+  --red: #B53324;
+  --dgreen: #212C1B;
+  --orange: #F15B22;
+  --yellow: #FFC64F;
+  --dblue: #023047;
+
+
+  --t-fast: 300ms;
+  --t-med: 800ms;
+  --t-slow: 1000ms;
+  --easing: cubic-bezier(.2, .3, .5, 1);
+
+  --frame-border-w: 1px;
+  --frame-max-w: 70vw;
+  --frame-margin-y: 30px;
+  --frame-text-pad: 1rem;
+  --frame-photo-max-h: 80vh;
+  --frame-margin: 10px;
+
+  --corner-font-size: 23px;
+  --corner-pad: 2px;
+  --corner-offset-y: 0px;
+  --corner-offset-x: 0px;
+
+  --mark-offset: var(--corner-pad);
+  --mark-size: var(--corner-font-size);
+
+  --margin-outer: 4rem;
+  --margin: 2rem;
+  --margin-inner: 2rem;
+
+  --space-1: 0.5rem;
+  --space-2: 1rem;
+  --space-3: 4rem;
+
+  --crosshair-size: 60px;
+  --crosshair-weight: 1px;
+  --crosshair-opacity: 0.4;
+  --crosshair-minor-opacity: 0.2;
+  --minor-factor: 0.3;
+  --crosshair-color: var(--fg);
+  --shell-side-ch: 6ch;
+  --archive-left-ch: 3ch;
+
+  --font-display-role: var(--font-display);
+
+  /* variable font presets */
+  --vf-body: "wght" 420;
+  --vf-prose: "wght" 430;
+  --vf-label: "wght" 520;
+  --vf-meta: "wght" 450;
+  --vf-display: "wght" 760;
+}

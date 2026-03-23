@@ -1,0 +1,152 @@
+
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz,wght,wdth,slnt@8..144,100..1000,25..151,-10..0&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Recursive:slnt,wght,CASL,CRSV,MONO@-15..0,300..1000,0..1,0..1,0..1&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght,SOFT,WONK@9..144,100..900,0..100,0..1&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Fragment+Mono:ital@0;1&family=IBM+Plex+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=IBM+Plex+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=Inter:opsz,wght@14..32,100..900&family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&family=Public+Sans:ital,wght@0,100..900;1,100..900&family=Recursive:CASL,CRSV,MONO,slnt,wght@0..1,0..1,0..1,-15..0,300..1000&family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap");
+
+@font-face{
+  font-family:"NBI";
+  src:url("../font/NBInternational-Reg.woff") format('woff');
+  font-weight: normal;
+  font-style:normal;
+}
+
+:root {
+
+  --small-text-size: 1rem;
+  --med-text-size: 3rem;
+  --large-text-size: 6rem;
+  --huge-text-size: 10rem;
+
+  --text-size-body: 1rem;
+  --text-size-meta: 1rem;
+  --text-size-display: clamp(2rem, 6vw, 5rem);
+
+  --line-body: 1;
+  --line-meta: 0.8;
+  --line-display: 1;
+
+  --measure: 70ch;
+
+  --NB-inter: "NBI", sans-serif;
+  --fragment-mono: "Fragment Mono", monospace;
+  --plex-mono: "IBM Plex Mono", monospace;
+  --recursive: "Recursive", monospace;
+  --space-mono: "Space Mono", monospace;
+  --jetbrains-mono: "JetBrains Mono", monospace;
+  --inter: "Inter", sans-serif;
+  --public-sans: "Public Sans", sans-serif;
+  --plex-sans: "IBM Plex Sans", sans-serif;
+  --roboto-flex: "Roboto Flex", sans-serif;
+  --fraunces: "Fraunces", serif;
+  --recursive: "Recursive", monospace;
+
+  /* project defaults */
+  --font-display: var(--NB-inter);
+  --font-body: var(--plex-mono);
+  --font-ui: var(--public-sans);
+  --font-mono: var(--recursive);
+  --font-prose: var(--fraunces);
+  --font-mark: var(--fragment-mono);
+}
+
+.font__fragment_mono { font-family: var(--fragment-mono); }
+.font__plex_mono     { font-family: var(--plex-mono); }
+.font__recursive     { font-family: var(--recursive); }
+.font__space_mono    { font-family: var(--space-mono); }
+.font__jetbrains     { font-family: var(--jetbrains-mono); }
+
+.font__inter         { font-family: var(--inter); }
+.font__public_sans   { font-family: var(--public-sans); }
+.font__plex_sans     { font-family: var(--plex-sans); }
+
+
+/* optional weight helpers */
+.__set__thin    { font-weight: 100; }
+.__set__light   { font-weight: 300; }
+.__set__regular { font-weight: 400; }
+.__set__thick  { font-weight: 500; }
+.__set__bold    { font-weight: 700; }
+.__set__black   { font-weight: 900; }
+.__set__small   { font-size: var(--small-text-size);}
+.__set__medium  { font-size: var(--med-text-size);}
+.__set__large   { font-size: var(--large-text-size);}
+.__set__huge    { font-size: var(--huge-text-size);}
+/* semantic aliases */
+.type__ui      { 
+    font-family: var(--font-ui);  
+}
+
+.type__title { 
+    font-family: var(--plex-mono);
+    font-size: var(--med-text-size);
+    font-weight: 300;
+}
+.type__mono  { 
+    font-family: var(--font-mono); 
+    font-size: clamp(1.5rem, 4vw, 4rem);
+    line-height: 1;
+    letter-spacing: -0.03em;
+}
+
+.type__body {
+  font-family: var(--font-body);
+  font-size: var(--text-size-body);
+  line-height: var(--line-body);
+}
+
+.type__prose {
+  font-family: var(--font-prose);
+  font-size: var(--text-size-body);
+  line-height: 1.6;
+  max-width: var(--measure);
+}
+
+.type__mark {
+  font-family: var(--font-mark);
+  font-size: var(--text-size-meta);
+  line-height: var(--line-meta);
+  font-weight: 100; 
+  letter-spacing: 0.08em;
+}
+
+.frame__body h1,
+.type__display {
+  text-transform: uppercase;
+  font-family: var(--font-display);
+  font-size: var(--text-size-display);
+  line-height: var(--line-display);
+  font-weight: 400;
+}
+
+.text-block > * + * {
+  margin-top: 1rem;
+}
+
+body {
+  font-family: var(--font-body);
+  font-size: var(--text-size-body);
+  line-height: var(--line-body);
+}
+
+p {
+  margin: var(--space-1);
+}
+
+em {
+  font-style: italic;
+}
+
+strong {
+  font-weight: 700;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  margin: var(--space-2);
+}
+
+h1:hover { 
+  background: var(--fg);
+  color: var(--bg);
+}
+

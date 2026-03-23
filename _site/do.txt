@@ -1,0 +1,88 @@
+home MENU (menu layout) -> stacks (layout)
+
+stacks -> post(layout)
+
+if essay -> essay (layout) 
+
+if photo -> photo (layout)
+
+default
+    = menu 
+    = stacks
+    post 
+        = essay 
+        = photo 
+
+
+<div class="frame">
+    <div class="frame__margin">
+        <div class="frame__body">
+            <div class="frame__text">
+                <h1 class="font__fragment_mono">fragment mono
+                    <p class="__set__thin"> this is thin</p>
+                    <p class="__set__light"> this is light</p>
+                    <p class="__set__regular"> this is regular</p>
+                    <p class="__set__thick"> this is thick</p>
+                    <p class="__set__bold"> this is bold</p>
+                    <p class="__set__black"> this is black</p>
+                </h1>
+                
+                <h1 class="font__plex_mono">plex mono
+                    <p class="__set__thin"> this is thin</p>
+                    <p class="__set__light"> this is light</p>
+                    <p class="__set__regular"> this is regular</p>
+                    <p class="__set__thick"> this is thick</p>
+                    <p class="__set__bold"> this is bold</p>
+                    <p class="__set__black"> this is black</p>
+                </h1>
+                <h1 class="font__jetbrains">jet brains
+                    <p class="__set__thin"> this is thin</p>
+                    <p class="__set__light"> this is light</p>
+                    <p class="__set__regular"> this is regular</p>
+                    <p class="__set__thick"> this is thick</p>
+                    <p class="__set__bold"> this is bold</p>
+                    <p class="__set__black"> this is black</p>
+
+                </h1>
+                <h1 class="font__public_sans">public sans
+                    <p class="__set__thin"> this is thin</p>
+                    <p class="__set__light"> this is light</p>
+                    <p class="__set__regular"> this is regular</p>
+                    <p class="__set__thick"> this is thick</p>
+                    <p class="__set__bold"> this is bold</p>
+                    <p class="__set__black"> this is black</p>
+
+                </h1>
+                <h1 class="font__inter">inter
+                    <p class="__set__thin"> this is thin</p>
+                    <p class="__set__light"> this is light</p>
+                    <p class="__set__regular"> this is regular</p>
+                    <p class="__set__thick"> this is thick</p>
+                    <p class="__set__bold"> this is bold</p>
+                    <p class="__set__black"> this is black</p>
+
+                </h1>
+                <h1 class="font__space_mono">space mono
+                    <p class="__set__thin"> this is thin</p>
+                    <p class="__set__light"> this is light</p>
+                    <p class="__set__regular"> this is regular</p>
+                    <p class="__set__thick"> this is thick</p>
+                    <p class="__set__bold"> this is bold</p>
+                    <p class="__set__black"> this is black</p>
+
+                </h1>
+                <h1 class="font__recursive">recursive
+                    <p class="__set__thin"> this is thin</p>
+                    <p class="__set__light"> this is light</p>
+                    <p class="__set__regular"> this is regular</p>
+                    <p class="__set__thick"> this is thick</p>
+                    <p class="__set__bold"> this is bold</p>
+                    <p class="__set__black"> this is black</p>
+
+                </h1>
+            </div>
+        </div>
+    </div>
+
+</div>
+

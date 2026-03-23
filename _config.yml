@@ -7,5 +7,14 @@ url: "https://fractal.fish"
 permalink: /:year/:month/:day/:title/
 
 
+collections:
+  text:
+    output: true
+  code:
+    output: true
+  pixels:
+    output: true
+
+
 
 
