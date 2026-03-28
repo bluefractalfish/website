@@ -35,3 +35,16 @@ margin-top: 2rem;
     place-items: center;
 }
 
+.head-row, 
+.foot-row { 
+    position: fixed;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    
+}
+
+.head-row { top: 0;}
+.foot-row { bottom: 0;}
+
+

@@ -1,17 +1,19 @@
 
 :root {
-  --bg: #131212;
+  --bg: #000000;
   --fg: #eaeaea;
-  --accent: #eaeaea;
+  --accent: #E95730;
   --hover-color: #eaeaea;
 
   --header-h: 5vh;
 
   --red: #B53324;
-  --dgreen: #212C1B;
+  --dgreen: #213C1B;
+  --green: #eeff12;
   --orange: #F15B22;
-  --yellow: #FFC64F;
+  --yellow: #FFD910;
   --dblue: #023047;
+  --blue: #143B77;
 
 
   --t-fast: 300ms;
@@ -25,6 +27,7 @@
   --frame-text-pad: 1rem;
   --frame-photo-max-h: 80vh;
   --frame-margin: 10px;
+  --frame-corner-r: 3px;
 
   --corner-font-size: 23px;
   --corner-pad: 2px;
@@ -36,17 +39,17 @@
 
   --margin-outer: 4rem;
   --margin: 2rem;
-  --margin-inner: 2rem;
+  --margin-inner: 1rem;
 
   --space-1: 0.5rem;
   --space-2: 1rem;
   --space-3: 4rem;
 
   --crosshair-size: 60px;
-  --crosshair-weight: 1px;
-  --crosshair-opacity: 0.4;
-  --crosshair-minor-opacity: 0.2;
-  --minor-factor: 0.3;
+  --crosshair-weight: 2px;
+  --crosshair-opacity: 1;
+  --crosshair-minor-opacity: 1;
+  --minor-factor: 0.5;
   --crosshair-color: var(--fg);
   --shell-side-ch: 6ch;
   --archive-left-ch: 3ch;

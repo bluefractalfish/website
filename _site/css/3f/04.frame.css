@@ -13,6 +13,7 @@
 
 .frame__body {
     border: var(--frame-border-w) solid var(--fg);
+    border-radius: var(--frame-corner-r);
     padding: 0px;
     position: relative;
     z-index: 1;

@@ -12,6 +12,7 @@
 
 .__center_text { 
     text-align: center;
+
 }
 
 .__left_text {
@@ -22,11 +23,35 @@
     text-align: right;
 }
 
-.__large_text{
-    font-size: var(--large-text-size);
-    transition: all 1s var(--ease);
+.__expanding_text{
+    transition: all var(--t-fast) var(--easing);
 }
 
-.__large_text:hover{
+.__expanding_text:hover{
     letter-spacing: 0.1em; 
+}
+
+.__set_accent{ 
+    color: var(--accent);
+}
+body:has(.red-link:hover){ 
+    --bg: var(--red);
+    --fg: var(--dgreen);
+    --accent: var(--dblue);
+}
+body:has(.blue-link:hover){ 
+    --bg: var(--blue);
+    --fg: var(--yellow);
+    --accent: var(--red);
+}
+
+body:has(.yellow-link:hover){ 
+    --bg: var(--yellow);
+    --fg: var(--dblue);
+    --accent: var(--green);
+}
+body:has(.green-link:hover){ 
+    --bg: var(--dgreen);
+    --fg: var(--orange);
+    --accent: var(--red);
 }

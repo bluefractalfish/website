@@ -78,8 +78,8 @@
 }
 
 .type__title { 
-    font-family: var(--plex-mono);
-    font-size: var(--med-text-size);
+    font-family: var(--font-display);
+    font-size: var(--large-text-size);
     font-weight: 300;
 }
 .type__mono  { 

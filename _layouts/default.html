@@ -20,16 +20,15 @@
   {% endif %}
 </head>
 
-<body class="{{ page.body_class | default: 'font__body' }}"> 
-
-    <div class="page" style="{%if page.bg%} --bg:{{page.bg}};{%endif%}{%if page.fg%} --fg:{{page.fg}};{%endif%}">
+<body>
+<main class="page" style="{%if page.bg%} --bg:{{page.bg}};{%endif%}{%if page.fg%} --fg:{{page.fg}};{%endif%}">
         <div id="doc-marginalia" class="marginalia marginalia--document"></div>
             
             <div class="marginalia marginalia--fixed">
-                {% if page.mark_tl %}<div class="mark type__mark" corner="tl">{{ page.mark_tl }}</div>{% endif %}
+                {% if page.mark_tl %}<div class="mark type__ui __set_accent __set__black" corner="tl">{{ page.mark_tl }}</div>{% endif %}
                 {% if page.mark_tr %}<div class="mark type__mark" corner="tr">{{ page.mark_tr }}</div>{% endif %}
                 {% if page.mark_bl %}<div class="mark type__mark" corner="bl">{{ page.mark_bl }}</div>{% endif %}
-                {% if page.mark_br %}<div class="mark type__mark" corner="br">{{ page.mark_br }}</div>{% endif %}
+                {% if page.mark_br %}<div class="mark type__ui" corner="br">{{ page.mark_br }}</div>{% endif %}
             </div>
 
             <main class="page__content {{ page.content_class }}">
@@ -131,5 +130,6 @@
   {% if page.site_script != false %}
     <script src="{{ '/scripts/scripts.js' | relative_url }}" defer></script>
   {% endif %}
+  </main>
 </body>
 </html>

@@ -2,12 +2,13 @@
 layout: default
 title: one
 
-header: false
-footer: false
+content_type: words
 ---
 
-<div class="stack">
 
+<div class="stack">
+    <a href="{{site.url | relative_url}}" class="button">back</a>
+{% if page.content_type == "pixels" %}
 {% for photo in site.pixels %}
 
     <a href="{{ photo.url | relative_url }}">
@@ -16,8 +17,8 @@ footer: false
             <div class="frame__body">
                 <div class="frame__media">
                     <img
-                      src="{{ post.image | relative_url }}"
-                      alt="{{ post.title | escape }}"
+                      src="{{ photo.image | relative_url }}"
+                      alt="{{ photo.title | escape }}"
                       loading="lazy">
                 </div>
             </div>
@@ -25,6 +26,9 @@ footer: false
       </div>
     </a>
 {% endfor %}
+{%endif%}
+
+{% if page.content_type == "words" %}
 {% for essay in site.text %}
     <a href="{{ essay.url | relative_url }}">
         <div class="frame">
@@ -33,13 +37,14 @@ footer: false
             <div class="frame__margin">
                 <div class="frame__body">
                     <div class="frame__text">
-                      <h1>{{ essay.title }}</h1>
-                      <p class="type__mark">{{ essay.content}}</p>
+                      <h1 class="type__title">{{ essay.title }}</h1>
+                      <p class="type__mark">{{ essay.excerpt }}</p>
                     </div>
                 </div>
             </div>
         </div>
     </a>
 {% endfor %}
-</div>
+{%endif%}
+
 </div>

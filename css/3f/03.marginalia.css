@@ -7,6 +7,7 @@
 .marginalia--fixed {
   position: fixed;
   inset: 0;
+  margin: var(--margin-inner);
   z-index: 20;
 }
 

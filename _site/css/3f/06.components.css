@@ -11,6 +11,16 @@
     margin: 0;
 }
 
+.button { 
+    padding: var(--space-1);
+    display: inline-block;
+}
+
+.button:hover {
+    background: var(--fg);
+    color: var(--bg);
+}
+
 .post__card { 
     display: block;
 }
