@@ -1,7 +1,7 @@
 
 :root {
-  --bg: #000000;
-  --fg: #eaeaea;
+  --bg: #121212;
+  --fg: #e4e4e4;
   --accent: #E95730;
   --hover-color: #eaeaea;
 
@@ -9,9 +9,9 @@
 
   --red: #B53324;
   --dgreen: #213C1B;
-  --green: #eeff12;
+  --green: #30ff03;
   --orange: #F15B22;
-  --yellow: #FFD910;
+  --yellow: #E5902C;
   --dblue: #023047;
   --blue: #143B77;
 
@@ -45,11 +45,11 @@
   --space-2: 1rem;
   --space-3: 4rem;
 
-  --crosshair-size: 60px;
+  --crosshair-size: 80px;
   --crosshair-weight: 2px;
-  --crosshair-opacity: 1;
-  --crosshair-minor-opacity: 1;
-  --minor-factor: 0.5;
+  --crosshair-opacity: 0.8;
+  --crosshair-minor-opacity: 0.5;
+  --minor-factor: 0.3;
   --crosshair-color: var(--fg);
   --shell-side-ch: 6ch;
   --archive-left-ch: 3ch;
