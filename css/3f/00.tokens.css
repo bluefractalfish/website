@@ -62,4 +62,145 @@
   --vf-label: "wght" 520;
   --vf-meta: "wght" 450;
   --vf-display: "wght" 760;
+
+  /* breakpoint tokens */
+  --breakpoint-2xs: 20rem;   /* 320px */
+  --breakpoint-xs: 30rem;    /* 480px */
+  --breakpoint-sm: 40rem;    /* 640px */
+  --breakpoint-md: 48rem;    /* 768px */
+  --breakpoint-lg: 64rem;    /* 1024px */
+  --breakpoint-xl: 80rem;    /* 1280px */
+  --breakpoint-2xl: 96rem;   /* 1536px */
+
+  /* container widths */
+  --container-width-2xs: 20rem;
+  --container-width-xs: 30rem;
+  --container-width-sm: 40rem;
+  --container-width-md: 48rem;
+  --container-width-lg: 64rem;
+  --container-width-xl: 80rem;
+  --container-width-2xl: 96rem;
+  --container-width-full: 100%;
+
+  /* layout gutters and rhythm */
+  --layout-gutter: clamp(1rem, 2vw, 2rem);
+  --layout-gutter-tight: 0.75rem;
+  --layout-gutter-loose: 3rem;
+
+  --section-space-2xs: 1rem;
+  --section-space-xs: 2rem;
+  --section-space-sm: 3rem;
+  --section-space-md: 5rem;
+  --section-space-lg: 8rem;
+  --section-space-xl: 12rem;
+
+  /* additional spacing scale */
+  --space-0: 0;
+  --space-4: 6rem;
+  --space-5: 8rem;
+  --space-6: 12rem;
+
+  /* radius */
+  --radius-none: 0;
+  --radius-xs: 0.125rem;
+  --radius-sm: 0.25rem;
+  --radius-md: 0.5rem;
+  --radius-lg: 1rem;
+  --radius-xl: 2rem;
+  --radius-pill: 999px;
+
+  /* borders */
+  --border-width-hairline: 1px;
+  --border-width-thin: 1px;
+  --border-width-medium: 2px;
+  --border-width-thick: 3px;
+
+  --border-color-soft: color-mix(in srgb, var(--fg) 18%, transparent);
+  --border-color-medium: color-mix(in srgb, var(--fg) 32%, transparent);
+  --border-color-strong: color-mix(in srgb, var(--fg) 56%, transparent);
+
+  --border-rule-soft: var(--border-width-thin) solid var(--border-color-soft);
+  --border-rule-medium: var(--border-width-medium) solid var(--border-color-medium);
+  --border-rule-strong: var(--border-width-medium) solid var(--border-color-strong);
+
+  /* shadows */
+  --shadow-xs: 0 1px 2px rgb(0 0 0 / 0.06);
+  --shadow-sm: 0 2px 8px rgb(0 0 0 / 0.08);
+  --shadow-md: 0 10px 24px rgb(0 0 0 / 0.12);
+  --shadow-lg: 0 20px 48px rgb(0 0 0 / 0.18);
+
+  /* surfaces */
+  --surface-0: var(--bg);
+  --surface-1: color-mix(in srgb, var(--bg) 92%, var(--fg) 8%);
+  --surface-2: color-mix(in srgb, var(--bg) 84%, var(--fg) 16%);
+  --surface-3: color-mix(in srgb, var(--bg) 76%, var(--fg) 24%);
+
+  /* semantic colors */
+  --color-info: #3b82f6;
+  --color-success: #16a34a;
+  --color-warning: #d97706;
+  --color-danger: #dc2626;
+
+  /* text measures */
+  --measure-narrow: 45ch;
+  --measure-body: 70ch;
+  --measure-wide: 90ch;
+  --measure-display: 18ch;
+
+  /* z-index */
+  --z-base: 1;
+  --z-raised: 10;
+  --z-sticky: 100;
+  --z-fixed: 500;
+  --z-drawer: 800;
+  --z-overlay: 900;
+  --z-modal: 1000;
+  --z-toast: 1100;
+
+  /* focus */
+  --focus-ring-width: 2px;
+  --focus-ring-offset: 2px;
+  --focus-ring-color: var(--accent);
+
+  /* navigation */
+  --nav-item-pad-x: 0.75rem;
+  --nav-item-pad-y: 0.5rem;
+  --nav-gap: 0.75rem;
+
+  /* forms */
+  --field-pad-x: 0.875rem;
+  --field-pad-y: 0.75rem;
+  --field-min-h: 2.75rem;
+
+  /* cards and panels */
+  --panel-pad-sm: 0.75rem;
+  --panel-pad-md: 1rem;
+  --panel-pad-lg: 1.5rem;
+
+  /* overlays */
+  --overlay-backdrop: rgb(0 0 0 / 0.48);
+  --modal-max-w-sm: 30rem;
+  --modal-max-w-md: 42rem;
+  --modal-max-w-lg: 60rem;
+  --drawer-w-sm: 18rem;
+  --drawer-w-md: 24rem;
+  --drawer-w-lg: 32rem;
+
+  /* aspect ratios */
+  --ratio-square: 1 / 1;
+  --ratio-landscape: 4 / 3;
+  --ratio-widescreen: 16 / 9;
+  --ratio-ultrawide: 21 / 9;
+  --ratio-portrait: 3 / 4;
+
+  /* tables */
+  --table-cell-pad-x: 0.75rem;
+  --table-cell-pad-y: 0.625rem;
+
+  /* transition aliases */
+  --transition-fast: all var(--t-fast) var(--easing);
+  --transition-med: all var(--t-med) var(--easing);
+  --transition-slow: all var(--t-slow) var(--easing);
+
 }
+

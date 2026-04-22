@@ -12,7 +12,7 @@ content_type: words
 {% for photo in site.pixels %}
 
     <a href="{{ photo.url | relative_url }}">
-      <div class="frame font__meta">
+      <div class="frame font__display">
           <div class="frame__margin">
             <div class="frame__body">
                 <div class="frame__media">
@@ -38,7 +38,7 @@ content_type: words
                 <div class="frame__body">
                     <div class="frame__text">
                       <h1 class="type__title">{{ essay.title }}</h1>
-                      <p class="type__mark">{{ essay.excerpt }}</p>
+                      <p class="type__title">{{ essay.excerpt }}</p>
                     </div>
                 </div>
             </div>
