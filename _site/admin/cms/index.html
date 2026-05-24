@@ -3,58 +3,232 @@
   <head>
     <meta charset="utf-8" />
     <meta name="robots" content="noindex" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>conman</title>
 
+    <!-- your site style system -->
+    <link rel="stylesheet" href="/css/3f/fff.css" />
+
+    <!-- Netlify Identity -->
     <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
 
-    <style>
-      :root {
-        --bg: #E54501;
-        --fg: #143B27;
+    <style id="cms-style-overrides">
+      /*
+        Decap injects its own CSS after load, so this sheet is intentionally
+        aggressive. It forces the CMS UI into your --bg / --fg logic.
+      */
+
+      html,
+      body,
+      #nc-root,
+      #nc-root * {
+        font-family: var(--font-display, monospace) !important;
+        color: var(--fg) !important;
+        border-color: var(--fg) !important;
+        box-shadow: none !important;
+        text-shadow: none !important;
       }
 
-      body {
-        background: var(--bg);
+      html,
+      body,
+      #nc-root {
+        background: var(--bg) !important;
       }
 
-      img[alt*="Decap"],
-      img[alt*="Netlify"],
-      svg[aria-label*="Decap"],
-      svg[aria-label*="Netlify"],
-      [class*="Logo"],
-      [class*="logo"],
-      [class*="Brand"],
-      [class*="brand"],
-      [class*="Footer"],
-      [class*="footer"] {
+      #nc-root,
+      #nc-root main,
+      #nc-root section,
+      #nc-root article,
+      #nc-root aside,
+      #nc-root nav,
+      #nc-root header,
+      #nc-root footer,
+      #nc-root div,
+      #nc-root form,
+      #nc-root ul,
+      #nc-root li {
+        background-color: var(--bg) !important;
+      }
+
+      /*
+        Hide Decap / Netlify branding, folder icons, arrows, carets,
+        dropdown icons, collection icons, and decorative SVGs.
+      */
+      #nc-root svg,
+      #nc-root img,
+      #nc-root [class*="logo"],
+      #nc-root [class*="Logo"],
+      #nc-root [class*="brand"],
+      #nc-root [class*="Brand"],
+      #nc-root [class*="footer"],
+      #nc-root [class*="Footer"],
+      #nc-root [class*="icon"],
+      #nc-root [class*="Icon"],
+      #nc-root [class*="arrow"],
+      #nc-root [class*="Arrow"],
+      #nc-root [class*="caret"],
+      #nc-root [class*="Caret"] {
         display: none !important;
+        visibility: hidden !important;
+        width: 0 !important;
+        height: 0 !important;
+        min-width: 0 !important;
+        min-height: 0 !important;
+        margin: 0 !important;
+        padding: 0 !important;
       }
 
-      button,
-      a[role="button"],
-      [class*="Button"],
-      [class*="button"] {
+      /*
+        Remove pseudo-element arrows/decals where Decap creates them
+        with CSS instead of SVG.
+      */
+      #nc-root *::before,
+      #nc-root *::after {
+        background: none !important;
+        box-shadow: none !important;
+        text-shadow: none !important;
+        border-color: var(--fg) !important;
+      }
+
+      #nc-root [class*="arrow"]::before,
+      #nc-root [class*="arrow"]::after,
+      #nc-root [class*="Arrow"]::before,
+      #nc-root [class*="Arrow"]::after,
+      #nc-root [class*="caret"]::before,
+      #nc-root [class*="caret"]::after,
+      #nc-root [class*="Caret"]::before,
+      #nc-root [class*="Caret"]::after {
+        display: none !important;
+        content: none !important;
+      }
+
+      /*
+        Buttons.
+      */
+      #nc-root button,
+      #nc-root a[role="button"],
+      #nc-root [class*="Button"],
+      #nc-root [class*="button"] {
+        appearance: none !important;
         border-radius: 0 !important;
         border: 2px solid var(--fg) !important;
         background: var(--fg) !important;
         color: var(--bg) !important;
-        box-shadow: none !important;
-        font-family: var(--font-display) !important;
+        font-family: var(--font-display, monospace) !important;
         text-transform: uppercase !important;
         letter-spacing: 0.08em !important;
+        box-shadow: none !important;
       }
 
-      button:hover,
-      a[role="button"]:hover,
-      [class*="Button"]:hover,
-      [class*="button"]:hover {
+      #nc-root button *,
+      #nc-root a[role="button"] *,
+      #nc-root [class*="Button"] *,
+      #nc-root [class*="button"] * {
+        color: var(--bg) !important;
+      }
+
+      #nc-root button:hover,
+      #nc-root a[role="button"]:hover,
+      #nc-root [class*="Button"]:hover,
+      #nc-root [class*="button"]:hover {
         background: var(--bg) !important;
         color: var(--fg) !important;
+      }
+
+      #nc-root button:hover *,
+      #nc-root a[role="button"]:hover *,
+      #nc-root [class*="Button"]:hover *,
+      #nc-root [class*="button"]:hover * {
+        color: var(--fg) !important;
+      }
+
+      /*
+        Inputs / editor fields.
+      */
+      #nc-root input,
+      #nc-root textarea,
+      #nc-root select,
+      #nc-root [contenteditable="true"] {
+        border-radius: 0 !important;
+        border: 2px solid var(--fg) !important;
+        background: var(--bg) !important;
+        color: var(--fg) !important;
+        caret-color: var(--fg) !important;
+        box-shadow: none !important;
+      }
+
+      #nc-root input::placeholder,
+      #nc-root textarea::placeholder {
+        color: color-mix(in srgb, var(--fg) 55%, transparent) !important;
+      }
+
+      /*
+        Links and collection rows.
+      */
+      #nc-root a {
+        color: var(--fg) !important;
+        text-decoration: none !important;
+      }
+
+      #nc-root a:hover {
+        background: var(--fg) !important;
+        color: var(--bg) !important;
+      }
+
+      #nc-root a:hover * {
+        color: var(--bg) !important;
+      }
+
+      /*
+        Selected / active UI states.
+      */
+      #nc-root [aria-selected="true"],
+      #nc-root [data-selected="true"],
+      #nc-root [class*="selected"],
+      #nc-root [class*="Selected"],
+      #nc-root [class*="active"],
+      #nc-root [class*="Active"] {
+        background: var(--fg) !important;
+        color: var(--bg) !important;
+      }
+
+      #nc-root [aria-selected="true"] *,
+      #nc-root [data-selected="true"] *,
+      #nc-root [class*="selected"] *,
+      #nc-root [class*="Selected"] *,
+      #nc-root [class*="active"] *,
+      #nc-root [class*="Active"] * {
+        color: var(--bg) !important;
+      }
+
+      /*
+        Modals / login widgets.
+      */
+      .netlify-identity-widget,
+      .netlify-identity-widget *,
+      .netlify-identity-modal,
+      .netlify-identity-modal * {
+        font-family: var(--font-display, monospace) !important;
+        border-radius: 0 !important;
+        box-shadow: none !important;
       }
     </style>
   </head>
 
   <body>
     <script src="https://unpkg.com/decap-cms@^3.0.0/dist/decap-cms.js"></script>
+
+    <script>
+      /*
+        Decap injects styles dynamically. Re-append our override sheet after
+        Decap loads so our CSS remains last in the document.
+      */
+      window.addEventListener("load", () => {
+        const style = document.getElementById("cms-style-overrides");
+        if (style) {
+          document.head.appendChild(style);
+        }
+      });
+    </script>
   </body>
 </html>
